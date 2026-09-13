@@ -1,7 +1,7 @@
 {
   "version": "2.0",
   "update_date": "2026-09-13",
-  "total_count": 183,
+  "total_count": 206,
   "modules": [
     "力学",
     "热学",
@@ -35,7 +35,9 @@
         ]
       },
       "prerequisites": [],
-      "follow_ups": [],
+      "follow_ups": [
+        "mech_motion_speed"
+      ],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -208,7 +210,9 @@
       "prerequisites": [
         "mech_variable_motion"
       ],
-      "follow_ups": [],
+      "follow_ups": [
+        "mech_instant_speed"
+      ],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -411,7 +415,8 @@
         "mech_sound_production"
       ],
       "follow_ups": [
-        "mech_sound_speed"
+        "mech_sound_speed",
+        "mech_noise_control"
       ],
       "parallels": [],
       "cross_module": [],
@@ -454,7 +459,8 @@
         "mech_sound_propagation"
       ],
       "follow_ups": [
-        "mech_pitch"
+        "mech_pitch",
+        "mech_ultrasound_infrasound"
       ],
       "parallels": [],
       "cross_module": [],
@@ -832,7 +838,8 @@
         "mech_density"
       ],
       "follow_ups": [
-        "mech_material_identification"
+        "mech_material_identification",
+        "mech_hollow_problem"
       ],
       "parallels": [],
       "cross_module": [],
@@ -959,7 +966,9 @@
       },
       "prerequisites": [],
       "follow_ups": [
-        "mech_force_effects"
+        "mech_force_effects",
+        "mech_newton1",
+        "mech_work"
       ],
       "parallels": [],
       "cross_module": [],
@@ -1137,7 +1146,8 @@
         "mech_force_diagram"
       ],
       "follow_ups": [
-        "mech_force_elastic"
+        "mech_force_elastic",
+        "mech_pressure_force"
       ],
       "parallels": [],
       "cross_module": [],
@@ -1237,7 +1247,9 @@
         "mech_force_analysis"
       ],
       "parallels": [],
-      "cross_module": [],
+      "cross_module": [
+        "therm_改变内能的方式"
+      ],
       "cross_disciplinary": [],
       "tags": [],
       "x": -130,
@@ -1325,7 +1337,8 @@
         "mech_force_concept"
       ],
       "follow_ups": [
-        "mech_inertia"
+        "mech_inertia",
+        "mech_force_motion_state"
       ],
       "parallels": [],
       "cross_module": [],
@@ -1418,7 +1431,8 @@
         "mech_inertia"
       ],
       "follow_ups": [
-        "mech_balanced_vs_interaction"
+        "mech_balanced_vs_interaction",
+        "mech_force_composition"
       ],
       "parallels": [],
       "cross_module": [],
@@ -1635,7 +1649,11 @@
         "mech_pressure_force"
       ],
       "follow_ups": [
-        "mech_liquid_pressure"
+        "mech_liquid_pressure",
+        "mech_pressure_methods",
+        "mech_buoyancy",
+        "mech_pascal_principle",
+        "mech_buoyancy_cause"
       ],
       "parallels": [],
       "cross_module": [],
@@ -1648,6 +1666,48 @@
       "y": 55,
       "z": -100,
       "size": 10,
+      "color": "",
+      "brightness": 1.0,
+      "star_level": 2
+    },
+    {
+      "id": "mech_pressure_methods",
+      "name": "增大和减小压强的方法",
+      "module": "力学",
+      "chapter": "压强",
+      "difficulty": 1,
+      "grade": 8,
+      "core_definition": "增大压强的方法有增大压力和减小受力面积，减小压强的方法有减小压力和增大受力面积。",
+      "formula": "p=F/S",
+      "units": "",
+      "history": {},
+      "key_experiments": [],
+      "applications": [
+        "刀磨锋利减小受力面积增大压强",
+        "书包带做宽增大受力面积减小压强"
+      ],
+      "common_mistakes": [],
+      "exam_points": {
+        "frequency": 3,
+        "question_types": [
+          "选择题",
+          "填空题"
+        ]
+      },
+      "prerequisites": [
+        "mech_pressure"
+      ],
+      "follow_ups": [
+        "mech_liquid_pressure"
+      ],
+      "parallels": [],
+      "cross_module": [],
+      "cross_disciplinary": [],
+      "tags": [],
+      "x": 85,
+      "y": 50,
+      "z": -105,
+      "size": 6,
       "color": "",
       "brightness": 1.0,
       "star_level": 2
@@ -1685,10 +1745,13 @@
         ]
       },
       "prerequisites": [
-        "mech_pressure"
+        "mech_pressure",
+        "mech_pressure_methods"
       ],
       "follow_ups": [
-        "mech_atmospheric_pressure"
+        "mech_liquid_pressure_chars",
+        "mech_atmospheric_pressure",
+        "mech_communicating_vessels"
       ],
       "parallels": [],
       "cross_module": [],
@@ -1698,6 +1761,50 @@
       "y": 65,
       "z": -115,
       "size": 10,
+      "color": "",
+      "brightness": 1.0,
+      "star_level": 2
+    },
+    {
+      "id": "mech_liquid_pressure_chars",
+      "name": "液体压强的特点",
+      "module": "力学",
+      "chapter": "压强",
+      "difficulty": 1,
+      "grade": 8,
+      "core_definition": "液体内部朝各个方向都有压强，在同一深度液体向各个方向的压强相等，深度越深压强越大，液体压强还与液体密度有关。",
+      "formula": "p=ρgh",
+      "units": "Pa",
+      "history": {},
+      "key_experiments": [
+        "压强计探究液体内部压强"
+      ],
+      "applications": [
+        "拦河坝上窄下宽",
+        "深海潜水需抗压设备"
+      ],
+      "common_mistakes": [],
+      "exam_points": {
+        "frequency": 3,
+        "question_types": [
+          "选择题",
+          "填空题"
+        ]
+      },
+      "prerequisites": [
+        "mech_liquid_pressure"
+      ],
+      "follow_ups": [
+        "mech_atmospheric_pressure"
+      ],
+      "parallels": [],
+      "cross_module": [],
+      "cross_disciplinary": [],
+      "tags": [],
+      "x": 100,
+      "y": 60,
+      "z": -120,
+      "size": 6,
       "color": "",
       "brightness": 1.0,
       "star_level": 2
@@ -1735,6 +1842,7 @@
         ]
       },
       "prerequisites": [
+        "mech_liquid_pressure_chars",
         "mech_liquid_pressure"
       ],
       "follow_ups": [
@@ -1935,6 +2043,57 @@
       "star_level": 3
     },
     {
+      "id": "mech_buoyancy",
+      "name": "浮力",
+      "module": "力学",
+      "chapter": "浮力",
+      "difficulty": 1,
+      "grade": 8,
+      "core_definition": "浸在液体中的物体受到液体向上的托力，这个力叫做浮力。浮力的方向竖直向上。",
+      "formula": "F浮=G-F拉",
+      "units": "N",
+      "history": {
+        "scientist": "阿基米德",
+        "year": "公元前200年",
+        "story": "",
+        "mistakes": ""
+      },
+      "key_experiments": [
+        "弹簧测力计测浮力"
+      ],
+      "applications": [
+        "轮船漂浮",
+        "潜水艇沉浮",
+        "气球升空"
+      ],
+      "common_mistakes": [],
+      "exam_points": {
+        "frequency": 5,
+        "question_types": [
+          "选择题",
+          "填空题",
+          "实验题"
+        ]
+      },
+      "prerequisites": [
+        "mech_pressure"
+      ],
+      "follow_ups": [
+        "mech_buoyancy_cause"
+      ],
+      "parallels": [],
+      "cross_module": [],
+      "cross_disciplinary": [],
+      "tags": [],
+      "x": 85,
+      "y": -50,
+      "z": -135,
+      "size": 10,
+      "color": "",
+      "brightness": 1.0,
+      "star_level": 1
+    },
+    {
       "id": "mech_buoyancy_cause",
       "name": "浮力产生原因",
       "module": "力学",
@@ -1965,6 +2124,7 @@
         ]
       },
       "prerequisites": [
+        "mech_buoyancy",
         "mech_pressure"
       ],
       "follow_ups": [
@@ -2062,7 +2222,8 @@
         "mech_archimedes"
       ],
       "follow_ups": [
-        "mech_浮力应用_轮船"
+        "mech_浮力应用_轮船",
+        "mech_buoyancy_applications"
       ],
       "parallels": [],
       "cross_module": [],
@@ -2072,6 +2233,47 @@
       "y": -65,
       "z": -155,
       "size": 10,
+      "color": "",
+      "brightness": 1.0,
+      "star_level": 2
+    },
+    {
+      "id": "mech_buoyancy_applications",
+      "name": "浮力的应用",
+      "module": "力学",
+      "chapter": "浮力",
+      "difficulty": 1,
+      "grade": 8,
+      "core_definition": "通过改变自身重力或排开液体的体积来改变浮力，实现物体在液体中的浮沉状态控制。",
+      "formula": "无",
+      "units": "",
+      "history": {},
+      "key_experiments": [],
+      "applications": [
+        "轮船由空心增大排水量",
+        "潜水艇改变自身重力",
+        "热气球改变浮力体积"
+      ],
+      "common_mistakes": [],
+      "exam_points": {
+        "frequency": 3,
+        "question_types": [
+          "选择题",
+          "填空题"
+        ]
+      },
+      "prerequisites": [
+        "mech_float_sink_condition"
+      ],
+      "follow_ups": [],
+      "parallels": [],
+      "cross_module": [],
+      "cross_disciplinary": [],
+      "tags": [],
+      "x": 115,
+      "y": -70,
+      "z": -158,
+      "size": 8,
       "color": "",
       "brightness": 1.0,
       "star_level": 2
@@ -2235,7 +2437,8 @@
       },
       "prerequisites": [],
       "follow_ups": [
-        "mech_lever_balance"
+        "mech_lever_balance",
+        "mech_lever_elements"
       ],
       "parallels": [],
       "cross_module": [],
@@ -2245,6 +2448,47 @@
       "y": -45,
       "z": 120,
       "size": 10,
+      "color": "",
+      "brightness": 1.0,
+      "star_level": 2
+    },
+    {
+      "id": "mech_lever_elements",
+      "name": "杠杆的五要素",
+      "module": "力学",
+      "chapter": "简单机械",
+      "difficulty": 1,
+      "grade": 8,
+      "core_definition": "杠杆的五要素包括支点O、动力F₁、阻力F₂、动力臂l₁、阻力臂l₂。",
+      "formula": "无",
+      "units": "",
+      "history": {},
+      "key_experiments": [],
+      "applications": [
+        "识别生活中的杠杆五要素"
+      ],
+      "common_mistakes": [],
+      "exam_points": {
+        "frequency": 3,
+        "question_types": [
+          "选择题",
+          "填空题"
+        ]
+      },
+      "prerequisites": [
+        "mech_lever"
+      ],
+      "follow_ups": [
+        "mech_lever_balance"
+      ],
+      "parallels": [],
+      "cross_module": [],
+      "cross_disciplinary": [],
+      "tags": [],
+      "x": -82,
+      "y": -48,
+      "z": 125,
+      "size": 6,
       "color": "",
       "brightness": 1.0,
       "star_level": 2
@@ -2281,10 +2525,13 @@
         ]
       },
       "prerequisites": [
-        "mech_lever"
+        "mech_lever",
+        "mech_lever_elements"
       ],
       "follow_ups": [
-        "mech_滑轮"
+        "mech_滑轮",
+        "mech_lever_classification",
+        "mech_wheel_axle"
       ],
       "parallels": [],
       "cross_module": [],
@@ -2294,6 +2541,49 @@
       "y": -55,
       "z": 140,
       "size": 10,
+      "color": "",
+      "brightness": 1.0,
+      "star_level": 2
+    },
+    {
+      "id": "mech_lever_classification",
+      "name": "杠杆的分类",
+      "module": "力学",
+      "chapter": "简单机械",
+      "difficulty": 1,
+      "grade": 8,
+      "core_definition": "省力杠杆：动力臂大于阻力臂，省力费距离；费力杠杆：动力臂小于阻力臂，费力省距离；等臂杠杆：动力臂等于阻力臂，不省力不费力。",
+      "formula": "无",
+      "units": "",
+      "history": {},
+      "key_experiments": [],
+      "applications": [
+        "省力杠杆：撬棍、瓶盖起子",
+        "费力杠杆：钓鱼竿、镊子",
+        "等臂杠杆：天平"
+      ],
+      "common_mistakes": [],
+      "exam_points": {
+        "frequency": 3,
+        "question_types": [
+          "选择题",
+          "填空题"
+        ]
+      },
+      "prerequisites": [
+        "mech_lever_balance"
+      ],
+      "follow_ups": [
+        "mech_滑轮"
+      ],
+      "parallels": [],
+      "cross_module": [],
+      "cross_disciplinary": [],
+      "tags": [],
+      "x": -100,
+      "y": -60,
+      "z": 145,
+      "size": 6,
       "color": "",
       "brightness": 1.0,
       "star_level": 2
@@ -2326,10 +2616,13 @@
         ]
       },
       "prerequisites": [
-        "mech_lever_balance"
+        "mech_lever_balance",
+        "mech_lever_classification"
       ],
       "follow_ups": [
-        "mech_滑轮组"
+        "mech_滑轮组",
+        "mech_fixed_pulley",
+        "mech_moving_pulley"
       ],
       "parallels": [],
       "cross_module": [],
@@ -2342,6 +2635,89 @@
       "color": "",
       "brightness": 1.0,
       "star_level": 3
+    },
+    {
+      "id": "mech_fixed_pulley",
+      "name": "定滑轮及其特点",
+      "module": "力学",
+      "chapter": "简单机械",
+      "difficulty": 1,
+      "grade": 8,
+      "core_definition": "使用时轴固定不动的滑轮。定滑轮不省力但能改变力的方向，实质是等臂杠杆。",
+      "formula": "F=G",
+      "units": "",
+      "history": {},
+      "key_experiments": [],
+      "applications": [
+        "旗杆顶端的定滑轮",
+        "起重机定滑轮"
+      ],
+      "common_mistakes": [],
+      "exam_points": {
+        "frequency": 3,
+        "question_types": [
+          "选择题",
+          "填空题"
+        ]
+      },
+      "prerequisites": [
+        "mech_滑轮"
+      ],
+      "follow_ups": [
+        "mech_滑轮组"
+      ],
+      "parallels": [],
+      "cross_module": [],
+      "cross_disciplinary": [],
+      "tags": [],
+      "x": -112,
+      "y": -68,
+      "z": 158,
+      "size": 6,
+      "color": "",
+      "brightness": 1.0,
+      "star_level": 2
+    },
+    {
+      "id": "mech_moving_pulley",
+      "name": "动滑轮及其特点",
+      "module": "力学",
+      "chapter": "简单机械",
+      "difficulty": 1,
+      "grade": 8,
+      "core_definition": "使用时轴随物体一起移动的滑轮。动滑轮省一半力但不能改变力的方向，实质是动力臂为阻力臂两倍的杠杆。",
+      "formula": "F=½G",
+      "units": "",
+      "history": {},
+      "key_experiments": [],
+      "applications": [
+        "动滑轮提升重物"
+      ],
+      "common_mistakes": [],
+      "exam_points": {
+        "frequency": 3,
+        "question_types": [
+          "选择题",
+          "填空题"
+        ]
+      },
+      "prerequisites": [
+        "mech_滑轮"
+      ],
+      "follow_ups": [
+        "mech_滑轮组"
+      ],
+      "parallels": [],
+      "cross_module": [],
+      "cross_disciplinary": [],
+      "tags": [],
+      "x": -112,
+      "y": -68,
+      "z": 170,
+      "size": 6,
+      "color": "",
+      "brightness": 1.0,
+      "star_level": 2
     },
     {
       "id": "mech_滑轮组",
@@ -2369,7 +2745,9 @@
         ]
       },
       "prerequisites": [
-        "mech_滑轮"
+        "mech_滑轮",
+        "mech_fixed_pulley",
+        "mech_moving_pulley"
       ],
       "follow_ups": [
         "mech_inclined_plane"
@@ -2497,16 +2875,64 @@
         "mech_force_concept"
       ],
       "follow_ups": [
+        "mech_power",
+        "mech_work_calculation",
+        "mech_kinetic_energy",
+        "mech_mechanical_energy"
+      ],
+      "parallels": [],
+      "cross_module": [
+        "elec_electric_work"
+      ],
+      "cross_disciplinary": [],
+      "tags": [],
+      "x": 0,
+      "y": 45,
+      "z": 60,
+      "size": 10,
+      "color": "",
+      "brightness": 1.0,
+      "star_level": 3
+    },
+    {
+      "id": "mech_work_calculation",
+      "name": "功的计算",
+      "module": "力学",
+      "chapter": "功和机械能",
+      "difficulty": 1,
+      "grade": 8,
+      "core_definition": "功等于力与物体在力的方向上移动的距离的乘积。公式：W=Fs。",
+      "formula": "W=Fs",
+      "units": "J",
+      "history": {},
+      "key_experiments": [],
+      "applications": [
+        "做功的两个必要因素",
+        "不做功的三种情况"
+      ],
+      "common_mistakes": [],
+      "exam_points": {
+        "frequency": 4,
+        "question_types": [
+          "选择题",
+          "填空题",
+          "计算题"
+        ]
+      },
+      "prerequisites": [
+        "mech_work"
+      ],
+      "follow_ups": [
         "mech_power"
       ],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
       "tags": [],
-      "x": 10,
-      "y": 95,
-      "z": -65,
-      "size": 10,
+      "x": 15,
+      "y": 90,
+      "z": -70,
+      "size": 6,
       "color": "",
       "brightness": 1.0,
       "star_level": 2
@@ -2544,10 +2970,12 @@
         ]
       },
       "prerequisites": [
-        "mech_work"
+        "mech_work",
+        "mech_work_calculation"
       ],
       "follow_ups": [
-        "mech_efficiency"
+        "mech_efficiency",
+        "mech_power_calculation"
       ],
       "parallels": [],
       "cross_module": [],
@@ -2557,6 +2985,145 @@
       "y": 105,
       "z": -80,
       "size": 10,
+      "color": "",
+      "brightness": 1.0,
+      "star_level": 2
+    },
+    {
+      "id": "mech_power_calculation",
+      "name": "功率的计算",
+      "module": "力学",
+      "chapter": "功和机械能",
+      "difficulty": 1,
+      "grade": 8,
+      "core_definition": "功率等于功与做功所用时间的比值。公式：P=W/t。",
+      "formula": "P=W/t",
+      "units": "W",
+      "history": {},
+      "key_experiments": [],
+      "applications": [
+        "功率与速度关系P=Fv"
+      ],
+      "common_mistakes": [],
+      "exam_points": {
+        "frequency": 4,
+        "question_types": [
+          "选择题",
+          "填空题",
+          "计算题"
+        ]
+      },
+      "prerequisites": [
+        "mech_power"
+      ],
+      "follow_ups": [
+        "mech_kinetic_energy"
+      ],
+      "parallels": [],
+      "cross_module": [],
+      "cross_disciplinary": [],
+      "tags": [],
+      "x": 30,
+      "y": 100,
+      "z": -85,
+      "size": 6,
+      "color": "",
+      "brightness": 1.0,
+      "star_level": 2
+    },
+    {
+      "id": "mech_kinetic_energy",
+      "name": "动能",
+      "module": "力学",
+      "chapter": "功和机械能",
+      "difficulty": 1,
+      "grade": 8,
+      "core_definition": "物体由于运动而具有的能量叫做动能。质量相同时速度越大动能越大，速度相同时质量越大动能越大。",
+      "formula": "Ek=½mv²",
+      "units": "J",
+      "history": {},
+      "key_experiments": [
+        "斜面小车实验探究动能影响因素"
+      ],
+      "applications": [
+        "汽车限速",
+        "撞击伤害与速度有关"
+      ],
+      "common_mistakes": [],
+      "exam_points": {
+        "frequency": 4,
+        "question_types": [
+          "选择题",
+          "填空题",
+          "实验题"
+        ]
+      },
+      "prerequisites": [
+        "mech_power_calculation",
+        "mech_work"
+      ],
+      "follow_ups": [
+        "mech_potential_energy"
+      ],
+      "parallels": [],
+      "cross_module": [
+        "energy_energy_conservation"
+      ],
+      "cross_disciplinary": [
+        "math_power_notation"
+      ],
+      "tags": [],
+      "x": 0,
+      "y": 105,
+      "z": -90,
+      "size": 8,
+      "color": "",
+      "brightness": 1.0,
+      "star_level": 2
+    },
+    {
+      "id": "mech_potential_energy",
+      "name": "势能",
+      "module": "力学",
+      "chapter": "功和机械能",
+      "difficulty": 1,
+      "grade": 8,
+      "core_definition": "重力势能是物体由于被举高而具有的能量，弹性势能是物体由于发生弹性形变而具有的能量。",
+      "formula": "Ep=mgh",
+      "units": "J",
+      "history": {},
+      "key_experiments": [
+        "重力势能影响因素探究"
+      ],
+      "applications": [
+        "水电站蓄水",
+        "打桩机重锤",
+        "弹簧储能"
+      ],
+      "common_mistakes": [],
+      "exam_points": {
+        "frequency": 4,
+        "question_types": [
+          "选择题",
+          "填空题"
+        ]
+      },
+      "prerequisites": [
+        "mech_kinetic_energy"
+      ],
+      "follow_ups": [
+        "mech_mechanical_energy"
+      ],
+      "parallels": [],
+      "cross_module": [
+        "energy_energy_conservation"
+      ],
+      "cross_disciplinary": [],
+      "tags": [],
+      "x": -5,
+      "y": 110,
+      "z": -85,
+      "size": 8,
       "color": "",
       "brightness": 1.0,
       "star_level": 2
@@ -2631,6 +3198,7 @@
         ]
       },
       "prerequisites": [
+        "mech_potential_energy",
         "mech_work"
       ],
       "follow_ups": [],
@@ -2802,7 +3370,8 @@
       },
       "prerequisites": [],
       "follow_ups": [
-        "therm_thermometer"
+        "therm_thermometer",
+        "therm_热膨胀"
       ],
       "parallels": [],
       "cross_module": [],
@@ -2888,6 +3457,7 @@
         "therm_thermometer"
       ],
       "follow_ups": [
+        "therm_熔点与凝固点",
         "therm_熔化吸热与凝固放热"
       ],
       "parallels": [],
@@ -2972,7 +3542,8 @@
         "therm_熔化吸热与凝固放热"
       ],
       "follow_ups": [
-        "therm_蒸发与沸腾"
+        "therm_蒸发与沸腾",
+        "therm_升华与凝华"
       ],
       "parallels": [],
       "cross_module": [],
@@ -3015,7 +3586,8 @@
         "therm_汽化与液化"
       ],
       "follow_ups": [
-        "therm_液化方法"
+        "therm_液化方法",
+        "therm_蒸发致冷"
       ],
       "parallels": [],
       "cross_module": [],
@@ -3177,7 +3749,8 @@
         "therm_物质的构成"
       ],
       "follow_ups": [
-        "therm_扩散现象"
+        "therm_扩散现象",
+        "therm_温度与分子运动"
       ],
       "parallels": [],
       "cross_module": [],
@@ -3307,7 +3880,9 @@
         "therm_分子间作用力"
       ],
       "follow_ups": [
-        "therm_改变内能的方式"
+        "therm_specific_heat",
+        "therm_改变内能的方式",
+        "therm_能量守恒定律_热学"
       ],
       "parallels": [],
       "cross_module": [],
@@ -3753,7 +4328,8 @@
         "therm_melting_freezing"
       ],
       "follow_ups": [
-        "therm_晶体与非晶体"
+        "therm_晶体与非晶体",
+        "therm_物态变化图像"
       ],
       "parallels": [],
       "cross_module": [],
@@ -3836,9 +4412,7 @@
       "prerequisites": [
         "therm_晶体与非晶体"
       ],
-      "follow_ups": [
-        "therm_蒸发致冷"
-      ],
+      "follow_ups": [],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -3920,7 +4494,10 @@
       "prerequisites": [
         "therm_蒸发致冷"
       ],
-      "follow_ups": [],
+      "follow_ups": [
+        "therm_自然界水循环",
+        "therm_相变潜热"
+      ],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -4138,12 +4715,14 @@
       ],
       "follow_ups": [],
       "parallels": [],
-      "cross_module": [],
+      "cross_module": [
+        "energy_directionality"
+      ],
       "cross_disciplinary": [],
       "tags": [],
-      "x": 120,
-      "y": 85,
-      "z": -40,
+      "x": -180,
+      "y": -180,
+      "z": -12,
       "size": 6,
       "color": "",
       "brightness": 1.0,
@@ -4346,7 +4925,9 @@
         "opt_light_source"
       ],
       "follow_ups": [
-        "opt_light_speed"
+        "opt_light_speed",
+        "opt_reflection_law",
+        "opt_refraction_law"
       ],
       "parallels": [],
       "cross_module": [],
@@ -4392,7 +4973,9 @@
         "opt_影子的形成"
       ],
       "parallels": [],
-      "cross_module": [],
+      "cross_module": [
+        "energy_nuclear_energy"
+      ],
       "cross_disciplinary": [
         "math_power_notation"
       ],
@@ -4566,7 +5149,9 @@
         "opt_rectilinear_propagation"
       ],
       "follow_ups": [
-        "opt_镜面反射与漫反射"
+        "opt_镜面反射与漫反射",
+        "opt_光路可逆性",
+        "opt_dispersion"
       ],
       "parallels": [],
       "cross_module": [],
@@ -4736,7 +5321,10 @@
       "prerequisites": [
         "opt_平面镜应用"
       ],
-      "follow_ups": [],
+      "follow_ups": [
+        "opt_凹面镜",
+        "opt_凸面镜"
+      ],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -4856,7 +5444,9 @@
       "prerequisites": [
         "opt_reflection_law"
       ],
-      "follow_ups": [],
+      "follow_ups": [
+        "elec_光纤通信"
+      ],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -4991,7 +5581,9 @@
         "opt_折射现象"
       ],
       "follow_ups": [
-        "opt_凸透镜对光的作用"
+        "opt_凸透镜对光的作用",
+        "opt_生活中的透镜",
+        "opt_lens_imaging"
       ],
       "parallels": [],
       "cross_module": [],
@@ -5034,6 +5626,7 @@
         "opt_透镜"
       ],
       "follow_ups": [
+        "opt_lens_imaging",
         "opt_凹透镜对光的作用"
       ],
       "parallels": [],
@@ -5158,10 +5751,12 @@
         ]
       },
       "prerequisites": [
-        "opt_凸透镜对光的作用"
+        "opt_凸透镜对光的作用",
+        "opt_透镜"
       ],
       "follow_ups": [
-        "opt_u_2f成像"
+        "opt_u_2f成像",
+        "opt_显微镜与望远镜"
       ],
       "parallels": [],
       "cross_module": [],
@@ -5204,7 +5799,8 @@
         "opt_lens_imaging"
       ],
       "follow_ups": [
-        "opt_f_u_2f成像"
+        "opt_f_u_2f成像",
+        "opt_照相机"
       ],
       "parallels": [],
       "cross_module": [],
@@ -5247,7 +5843,8 @@
         "opt_u_2f成像"
       ],
       "follow_ups": [
-        "opt_u_f成像"
+        "opt_u_f成像",
+        "opt_投影仪"
       ],
       "parallels": [],
       "cross_module": [],
@@ -5290,7 +5887,8 @@
         "opt_f_u_2f成像"
       ],
       "follow_ups": [
-        "opt_照相机"
+        "opt_照相机",
+        "opt_放大镜"
       ],
       "parallels": [],
       "cross_module": [],
@@ -5329,11 +5927,10 @@
         ]
       },
       "prerequisites": [
+        "opt_u_f成像",
         "opt_u_2f成像"
       ],
-      "follow_ups": [
-        "opt_投影仪"
-      ],
+      "follow_ups": [],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -5373,9 +5970,7 @@
       "prerequisites": [
         "opt_f_u_2f成像"
       ],
-      "follow_ups": [
-        "opt_放大镜"
-      ],
+      "follow_ups": [],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -5652,6 +6247,57 @@
       "star_level": 3
     },
     {
+      "id": "opt_显微镜与望远镜",
+      "name": "显微镜和望远镜",
+      "module": "光学",
+      "chapter": "凸透镜成像",
+      "difficulty": 2,
+      "grade": 8,
+      "core_definition": "显微镜和望远镜都是由两个凸透镜组成的透镜组。显微镜的物镜焦距短、目镜焦距长，用于观察微小物体；望远镜的物镜焦距长、目镜焦距短，用于观察远处物体。",
+      "formula": "无",
+      "units": "",
+      "history": {
+        "scientist": "伽利略, 列文虎克",
+        "year": "1609(望远镜);1674(显微镜)",
+        "story": "",
+        "mistakes": ""
+      },
+      "key_experiments": [],
+      "applications": [
+        "天文观测",
+        "生物学显微观察",
+        "医用内窥镜"
+      ],
+      "common_mistakes": [
+        "误以为显微镜目镜放大物镜不放大",
+        "混淆显微镜与望远镜的焦距配置"
+      ],
+      "exam_points": {
+        "frequency": 2,
+        "question_types": [
+          "选择题",
+          "填空题"
+        ]
+      },
+      "prerequisites": [
+        "opt_lens_imaging"
+      ],
+      "follow_ups": [],
+      "parallels": [],
+      "cross_module": [],
+      "cross_disciplinary": [
+        "生物_显微镜使用"
+      ],
+      "tags": [],
+      "x": 85,
+      "y": 88,
+      "z": 6,
+      "size": 6,
+      "color": "",
+      "brightness": 1.0,
+      "star_level": 3
+    },
+    {
       "id": "elec_charge",
       "name": "电荷",
       "module": "电磁学",
@@ -5816,7 +6462,11 @@
         "elec_导体与绝缘体"
       ],
       "follow_ups": [
-        "elec_电路"
+        "elec_电路",
+        "elec_电流表",
+        "elec_resistance",
+        "elec_voltage",
+        "elec_电流的磁效应"
       ],
       "parallels": [],
       "cross_module": [],
@@ -5946,9 +6596,7 @@
       "prerequisites": [
         "elec_series_circuit"
       ],
-      "follow_ups": [
-        "elec_电流表"
-      ],
+      "follow_ups": [],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -5988,9 +6636,7 @@
       "prerequisites": [
         "elec_current"
       ],
-      "follow_ups": [
-        "elec_voltage"
-      ],
+      "follow_ups": [],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -6039,7 +6685,9 @@
         "elec_current"
       ],
       "follow_ups": [
-        "elec_电压表"
+        "elec_电压表",
+        "elec_electric_work",
+        "elec_测量小灯泡的电功率"
       ],
       "parallels": [],
       "cross_module": [],
@@ -6401,7 +7049,9 @@
       "prerequisites": [
         "elec_串联电路特点"
       ],
-      "follow_ups": [],
+      "follow_ups": [
+        "elec_电路故障分析"
+      ],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [
@@ -6584,7 +7234,9 @@
         "elec_电能表"
       ],
       "follow_ups": [
-        "elec_额定功率与实际功率"
+        "elec_测量小灯泡的电功率",
+        "elec_额定功率与实际功率",
+        "elec_电流过大的原因"
       ],
       "parallels": [],
       "cross_module": [],
@@ -6765,7 +7417,8 @@
         "elec_电热利用与防止"
       ],
       "follow_ups": [
-        "elec_安全用电"
+        "elec_安全用电",
+        "elec_电流过大的原因"
       ],
       "parallels": [],
       "cross_module": [],
@@ -6849,7 +7502,9 @@
       "prerequisites": [
         "elec_安全用电"
       ],
-      "follow_ups": [],
+      "follow_ups": [
+        "elec_触电急救"
+      ],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -6897,6 +7552,97 @@
       "tags": [],
       "x": 138,
       "y": -108,
+      "z": -38,
+      "size": 6,
+      "color": "",
+      "brightness": 1.0,
+      "star_level": 3
+    },
+    {
+      "id": "elec_测量小灯泡的电功率",
+      "name": "测量小灯泡的电功率",
+      "module": "电磁学",
+      "chapter": "电功率",
+      "difficulty": 3,
+      "grade": 9,
+      "core_definition": "用电压表和电流表测量小灯泡两端的电压和通过它的电流，根据P=UI计算电功率，观察小灯泡电压变化时实际功率和亮度的变化。",
+      "formula": "P=UI",
+      "units": "",
+      "history": {},
+      "key_experiments": [
+        "测小灯泡在不同电压下的电功率"
+      ],
+      "applications": [
+        "判断灯泡是否正常发光",
+        "比较不同用电器的耗能"
+      ],
+      "common_mistakes": [
+        "误将额定功率当作实际功率",
+        "忘记P=UI中U和I必须是同一时刻的对应值"
+      ],
+      "exam_points": {
+        "frequency": 4,
+        "question_types": [
+          "实验探究题",
+          "选择题",
+          "填空题"
+        ]
+      },
+      "prerequisites": [
+        "elec_electric_power",
+        "elec_voltage"
+      ],
+      "follow_ups": [],
+      "parallels": [],
+      "cross_module": [],
+      "cross_disciplinary": [],
+      "tags": [],
+      "x": 52,
+      "y": 104,
+      "z": -10,
+      "size": 7,
+      "color": "",
+      "brightness": 1.0,
+      "star_level": 3
+    },
+    {
+      "id": "elec_电流过大的原因",
+      "name": "家庭电路中电流过大的原因",
+      "module": "电磁学",
+      "chapter": "电功率",
+      "difficulty": 2,
+      "grade": 9,
+      "core_definition": "家庭电路中电流过大的原因有两个：1) 总功率过大——同时使用多个大功率用电器；2) 短路——火线和零线直接连通。电流过大会导致保险丝熔断或空气开关跳闸。",
+      "formula": "I=P总/U",
+      "units": "",
+      "history": {},
+      "key_experiments": [],
+      "applications": [
+        "保险丝保护电路",
+        "空气开关自动断电"
+      ],
+      "common_mistakes": [
+        "误以为保险丝越粗越安全",
+        "混淆短路和断路"
+      ],
+      "exam_points": {
+        "frequency": 3,
+        "question_types": [
+          "选择题",
+          "简答题"
+        ]
+      },
+      "prerequisites": [
+        "elec_家庭电路",
+        "elec_electric_power"
+      ],
+      "follow_ups": [],
+      "parallels": [],
+      "cross_module": [],
+      "cross_disciplinary": [],
+      "tags": [],
+      "x": 80,
+      "y": 112,
       "z": -38,
       "size": 6,
       "color": "",
@@ -6974,7 +7720,8 @@
         "elec_磁现象"
       ],
       "follow_ups": [
-        "elec_地磁场"
+        "elec_地磁场",
+        "elec_electromagnetic_induction"
       ],
       "parallels": [],
       "cross_module": [],
@@ -7016,9 +7763,7 @@
       "prerequisites": [
         "elec_magnetic_field"
       ],
-      "follow_ups": [
-        "elec_电流的磁效应"
-      ],
+      "follow_ups": [],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -7065,7 +7810,8 @@
         "elec_current"
       ],
       "follow_ups": [
-        "elec_电磁铁"
+        "elec_电磁铁",
+        "elec_磁场对电流的作用"
       ],
       "parallels": [],
       "cross_module": [],
@@ -7149,9 +7895,7 @@
       "prerequisites": [
         "elec_电磁铁"
       ],
-      "follow_ups": [
-        "elec_磁场对电流的作用"
-      ],
+      "follow_ups": [],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -7285,7 +8029,8 @@
         "elec_magnetic_field"
       ],
       "follow_ups": [
-        "elec_generator"
+        "elec_generator",
+        "elec_电磁波"
       ],
       "parallels": [],
       "cross_module": [],
@@ -7464,12 +8209,309 @@
       "prerequisites": [
         "elec_electromagnetic_induction"
       ],
-      "follow_ups": [],
+      "follow_ups": [
+        "elec_广播电视移动通信",
+        "elec_卫星通信"
+      ],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [
         "math_inverse_graph"
       ],
+      "tags": [],
+      "x": 90,
+      "y": 130,
+      "z": 42,
+      "size": 8,
+      "color": "",
+      "brightness": 1.0,
+      "star_level": 3
+    },
+    {
+      "id": "elec_电话",
+      "name": "电话",
+      "module": "电磁学",
+      "chapter": "信息的传递",
+      "difficulty": 1,
+      "grade": 9,
+      "core_definition": "电话由话筒和听筒组成。话筒将声信号转化为变化的电信号，听筒将电信号还原为声信号。电话通过导线传递电信号实现远距离通话。",
+      "formula": "无",
+      "units": "",
+      "history": {
+        "scientist": "贝尔",
+        "year": "1876",
+        "story": "贝尔在做聋哑人语言教学的实验中偶然发明了电话。",
+        "mistakes": ""
+      },
+      "key_experiments": [],
+      "applications": [
+        "固定电话通话",
+        "电话交换机"
+      ],
+      "common_mistakes": [
+        "误以为电话直接传递声音",
+        "混淆电话与电报的工作原理"
+      ],
+      "exam_points": {
+        "frequency": 2,
+        "question_types": [
+          "选择题",
+          "填空题"
+        ]
+      },
+      "prerequisites": [],
+      "follow_ups": [
+        "elec_模拟通信与数字通信"
+      ],
+      "parallels": [],
+      "cross_module": [],
+      "cross_disciplinary": [],
+      "tags": [],
+      "x": 120,
+      "y": 110,
+      "z": 20,
+      "size": 6,
+      "color": "",
+      "brightness": 1.0,
+      "star_level": 1
+    },
+    {
+      "id": "elec_模拟通信与数字通信",
+      "name": "模拟通信与数字通信",
+      "module": "电磁学",
+      "chapter": "信息的传递",
+      "difficulty": 2,
+      "grade": 9,
+      "core_definition": "模拟信号（如电话电流）在传输中易受干扰而失真；数字信号（用0和1编码）抗干扰能力强、便于计算机处理，已成为现代通信的主要方式。",
+      "formula": "无",
+      "units": "",
+      "history": {},
+      "key_experiments": [],
+      "applications": [
+        "数字电视",
+        "手机通信",
+        "计算机通信"
+      ],
+      "common_mistakes": [
+        "误以为模拟信号比数字信号更先进",
+        "混淆模拟和数字的概念"
+      ],
+      "exam_points": {
+        "frequency": 1,
+        "question_types": [
+          "选择题",
+          "填空题"
+        ]
+      },
+      "prerequisites": [
+        "elec_电话"
+      ],
+      "follow_ups": [
+        "elec_广播电视移动通信"
+      ],
+      "parallels": [],
+      "cross_module": [],
+      "cross_disciplinary": [],
+      "tags": [],
+      "x": 125,
+      "y": 114,
+      "z": 22,
+      "size": 6,
+      "color": "",
+      "brightness": 1.0,
+      "star_level": 1
+    },
+    {
+      "id": "elec_广播电视移动通信",
+      "name": "广播、电视和移动通信",
+      "module": "电磁学",
+      "chapter": "信息的传递",
+      "difficulty": 1,
+      "grade": 9,
+      "core_definition": "广播用电磁波传递声音信号，电视用电磁波同时传递声音和图像信号；移动通信通过基站和电磁波实现随时随地的无线通信。",
+      "formula": "无",
+      "units": "",
+      "history": {},
+      "key_experiments": [],
+      "applications": [
+        "收音机收听广播",
+        "电视节目接收",
+        "手机通话与上网"
+      ],
+      "common_mistakes": [
+        "误以为电视声音和图像共用一条信道",
+        "混淆广播与电视的频率范围"
+      ],
+      "exam_points": {
+        "frequency": 2,
+        "question_types": [
+          "选择题",
+          "填空题"
+        ]
+      },
+      "prerequisites": [
+        "elec_电磁波",
+        "elec_模拟通信与数字通信"
+      ],
+      "follow_ups": [
+        "elec_光纤通信",
+        "elec_卫星通信"
+      ],
+      "parallels": [],
+      "cross_module": [],
+      "cross_disciplinary": [],
+      "tags": [],
+      "x": 130,
+      "y": 118,
+      "z": 24,
+      "size": 7,
+      "color": "",
+      "brightness": 1.0,
+      "star_level": 2
+    },
+    {
+      "id": "elec_光纤通信",
+      "name": "光纤通信",
+      "module": "电磁学",
+      "chapter": "信息的传递",
+      "difficulty": 2,
+      "grade": 9,
+      "core_definition": "光导纤维利用光的全反射原理传输信息；光纤通信容量大、速度快、损耗小、抗干扰强，是信息高速公路的重要支柱。",
+      "formula": "无",
+      "units": "",
+      "history": {
+        "scientist": "高锟",
+        "year": "1966",
+        "story": "高锟提出用光纤传输信息的设想，获得2009年诺贝尔物理学奖。",
+        "mistakes": ""
+      },
+      "key_experiments": [],
+      "applications": [
+        "宽带光纤接入",
+        "跨海通信光缆",
+        "医用内窥镜"
+      ],
+      "common_mistakes": [
+        "误以为光纤中传输的是电信号",
+        "混淆光纤通信与普通电线通信"
+      ],
+      "exam_points": {
+        "frequency": 2,
+        "question_types": [
+          "选择题",
+          "填空题"
+        ]
+      },
+      "prerequisites": [
+        "elec_广播电视移动通信",
+        "opt_光路可逆性"
+      ],
+      "follow_ups": [
+        "elec_互联网"
+      ],
+      "parallels": [],
+      "cross_module": [
+        "elec_互联网"
+      ],
+      "cross_disciplinary": [],
+      "tags": [],
+      "x": 135,
+      "y": 122,
+      "z": 26,
+      "size": 6,
+      "color": "",
+      "brightness": 1.0,
+      "star_level": 1
+    },
+    {
+      "id": "elec_卫星通信",
+      "name": "卫星通信",
+      "module": "电磁学",
+      "chapter": "信息的传递",
+      "difficulty": 1,
+      "grade": 9,
+      "core_definition": "利用通信卫星作为太空中转站转发电磁波信号，实现远距离通信。三颗地球同步卫星可以覆盖全球。卫星通信范围广、容量大、不受地形限制。",
+      "formula": "无",
+      "units": "",
+      "history": {},
+      "key_experiments": [],
+      "applications": [
+        "卫星电视直播",
+        "GPS导航",
+        "气象卫星通信"
+      ],
+      "common_mistakes": [
+        "误以为一颗卫星就能覆盖全球",
+        "混淆通信卫星与GPS卫星的功能"
+      ],
+      "exam_points": {
+        "frequency": 1,
+        "question_types": [
+          "选择题",
+          "填空题"
+        ]
+      },
+      "prerequisites": [
+        "elec_广播电视移动通信",
+        "elec_电磁波"
+      ],
+      "follow_ups": [
+        "elec_互联网"
+      ],
+      "parallels": [
+        "elec_光纤通信"
+      ],
+      "cross_module": [],
+      "cross_disciplinary": [],
+      "tags": [],
+      "x": 138,
+      "y": 126,
+      "z": 28,
+      "size": 6,
+      "color": "",
+      "brightness": 1.0,
+      "star_level": 1
+    },
+    {
+      "id": "elec_互联网",
+      "name": "互联网",
+      "module": "电磁学",
+      "chapter": "信息的传递",
+      "difficulty": 2,
+      "grade": 9,
+      "core_definition": "互联网是覆盖全球的信息网络，利用光纤、卫星、电缆等传输介质将世界各地的计算机和设备连接在一起，实现信息共享、通信和数据处理。",
+      "formula": "无",
+      "units": "",
+      "history": {},
+      "key_experiments": [],
+      "applications": [
+        "电子邮件",
+        "网页浏览",
+        "视频会议",
+        "云计算"
+      ],
+      "common_mistakes": [
+        "误以为互联网就是万维网",
+        "混淆互联网和局域网的范围"
+      ],
+      "exam_points": {
+        "frequency": 1,
+        "question_types": [
+          "选择题",
+          "填空题"
+        ]
+      },
+      "prerequisites": [
+        "elec_光纤通信",
+        "elec_卫星通信"
+      ],
+      "follow_ups": [],
+      "parallels": [],
+      "cross_module": [
+        "opt_dispersion",
+        "energy_nuclear_energy"
+      ],
+      "cross_disciplinary": [],
       "tags": [],
       "x": 90,
       "y": 130,
@@ -7513,11 +8555,17 @@
       },
       "prerequisites": [],
       "follow_ups": [
-        "energy_energy_classification"
+        "energy_directionality"
       ],
       "parallels": [],
-      "cross_module": [],
-      "cross_disciplinary": [],
+      "cross_module": [
+        "mech_mechanical_energy",
+        "therm_能量守恒定律_热学",
+        "elec_generator"
+      ],
+      "cross_disciplinary": [
+        "化学_质量守恒"
+      ],
       "tags": [],
       "x": 0,
       "y": 50,
@@ -7526,6 +8574,52 @@
       "color": "",
       "brightness": 1.5,
       "star_level": 1
+    },
+    {
+      "id": "energy_directionality",
+      "name": "能量转化与转移的方向性",
+      "module": "能量",
+      "chapter": "能源与可持续发展",
+      "difficulty": 2,
+      "grade": 9,
+      "core_definition": "能量的转化和转移具有方向性。涉及热现象的能量转化过程是有方向性的，不可逆的，因此我们所能利用的能源是有限的。",
+      "formula": "无",
+      "units": "",
+      "history": {},
+      "key_experiments": [],
+      "applications": [
+        "热量自发从高温传向低温",
+        "机械能可以全部转化为内能",
+        "内能无法自动转化为机械能",
+        "能量的利用是有条件的"
+      ],
+      "common_mistakes": [],
+      "exam_points": {
+        "frequency": 3,
+        "question_types": [
+          "选择题",
+          "填空题"
+        ]
+      },
+      "prerequisites": [
+        "energy_energy_conservation"
+      ],
+      "follow_ups": [
+        "energy_energy_classification"
+      ],
+      "parallels": [],
+      "cross_module": [
+        "therm_热传递方向"
+      ],
+      "cross_disciplinary": [],
+      "tags": [],
+      "x": 22,
+      "y": 95,
+      "z": 42,
+      "size": 8,
+      "color": "",
+      "brightness": 1.0,
+      "star_level": 3
     },
     {
       "id": "energy_energy_classification",
@@ -7555,19 +8649,69 @@
         ]
       },
       "prerequisites": [
-        "energy_energy_conservation"
+        "energy_directionality"
+      ],
+      "follow_ups": [
+        "energy_primary_secondary"
+      ],
+      "parallels": [],
+      "cross_module": [
+        "mech_work"
+      ],
+      "cross_disciplinary": [
+        "地理_化石燃料"
+      ],
+      "tags": [],
+      "x": 70,
+      "y": 20,
+      "z": 0,
+      "size": 10,
+      "color": "",
+      "brightness": 1.0,
+      "star_level": 2
+    },
+    {
+      "id": "energy_primary_secondary",
+      "name": "一次能源和二次能源",
+      "module": "能量",
+      "chapter": "能源与可持续发展",
+      "difficulty": 1,
+      "grade": 9,
+      "core_definition": "一次能源是从自然界直接获取的能源（如煤、石油、天然气等）；二次能源是通过一次能源的加工转化得到的能源（如电能、汽油、酒精等）。",
+      "formula": "无",
+      "units": "",
+      "history": {},
+      "key_experiments": [],
+      "applications": [
+        "煤炭、石油、天然气是一次能源",
+        "电能、汽油是二次能源",
+        "风能、水能、太阳能是一次能源",
+        "焦炭、煤气是二次能源"
+      ],
+      "common_mistakes": [],
+      "exam_points": {
+        "frequency": 3,
+        "question_types": [
+          "选择题",
+          "填空题"
+        ]
+      },
+      "prerequisites": [
+        "energy_energy_classification"
       ],
       "follow_ups": [
         "energy_solar_energy"
       ],
       "parallels": [],
       "cross_module": [],
-      "cross_disciplinary": [],
+      "cross_disciplinary": [
+        "地理_化石燃料"
+      ],
       "tags": [],
-      "x": 70,
-      "y": 20,
-      "z": 0,
-      "size": 10,
+      "x": 35,
+      "y": 60,
+      "z": 50,
+      "size": 8,
       "color": "",
       "brightness": 1.0,
       "star_level": 2
@@ -7598,14 +8742,19 @@
         ]
       },
       "prerequisites": [
-        "energy_energy_classification"
+        "energy_primary_secondary"
       ],
       "follow_ups": [
         "energy_nuclear_energy"
       ],
-      "parallels": [],
+      "parallels": [
+        "energy_energy_environment"
+      ],
       "cross_module": [],
-      "cross_disciplinary": [],
+      "cross_disciplinary": [
+        "生物_光合作用",
+        "工程_光伏发电"
+      ],
       "tags": [],
       "x": 43,
       "y": -56,
@@ -7651,9 +8800,17 @@
       "follow_ups": [
         "energy_nuclear_fusion_fission"
       ],
-      "parallels": [],
-      "cross_module": [],
-      "cross_disciplinary": [],
+      "parallels": [
+        "energy_renewable_nonrenewable"
+      ],
+      "cross_module": [
+        "opt_light_speed",
+        "elec_电磁波"
+      ],
+      "cross_disciplinary": [
+        "化学_核反应",
+        "工程_核电站"
+      ],
       "tags": [],
       "x": 0,
       "y": -80,
@@ -7694,9 +8851,13 @@
       "follow_ups": [
         "energy_renewable_nonrenewable"
       ],
-      "parallels": [],
+      "parallels": [
+        "energy_sustainable_可持续发展"
+      ],
       "cross_module": [],
-      "cross_disciplinary": [],
+      "cross_disciplinary": [
+        "化学_原子结构"
+      ],
       "tags": [],
       "x": -43,
       "y": -56,
@@ -7737,9 +8898,13 @@
       "follow_ups": [
         "energy_energy_environment"
       ],
-      "parallels": [],
+      "parallels": [
+        "energy_nuclear_energy"
+      ],
       "cross_module": [],
-      "cross_disciplinary": [],
+      "cross_disciplinary": [
+        "地理_能源分布"
+      ],
       "tags": [],
       "x": -70,
       "y": 20,
@@ -7780,9 +8945,13 @@
       "follow_ups": [
         "energy_sustainable_可持续发展"
       ],
-      "parallels": [],
+      "parallels": [
+        "energy_solar_energy"
+      ],
       "cross_module": [],
-      "cross_disciplinary": [],
+      "cross_disciplinary": [
+        "地理_温室效应"
+      ],
       "tags": [],
       "x": -43,
       "y": 66,
@@ -7821,9 +8990,13 @@
         "energy_energy_environment"
       ],
       "follow_ups": [],
-      "parallels": [],
+      "parallels": [
+        "energy_nuclear_fusion_fission"
+      ],
       "cross_module": [],
-      "cross_disciplinary": [],
+      "cross_disciplinary": [
+        "工程_绿色建筑"
+      ],
       "tags": [],
       "x": 43,
       "y": 66,

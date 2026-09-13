@@ -1,3 +1,4 @@
+// 此文件由 生活应用场景.json 自动生成，请勿直接编辑。
 window._LIFE_DATA = {
   "lifeApplications": [
     {
