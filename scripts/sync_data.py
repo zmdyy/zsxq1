@@ -19,6 +19,7 @@ SPECS = (
     ("易混淆概念对比表.json", "易混淆概念对比表.js", "_CONF_DATA"),
     ("知识链排序配置表.json", "知识链排序配置表.js", "_CHAIN_DATA"),
     ("生活应用场景.json", "生活应用场景.js", "_LIFE_DATA"),
+    ("基础概念判断题.json", "基础概念判断题.js", "_QUIZ_DATA"),
 )
 EXTERNAL_SUBJECTS = {"数学", "生物", "化学", "地理", "工程", "艺术", "历史"}
 
@@ -125,6 +126,7 @@ def validate(
     chain_doc: dict[str, Any],
     life_doc: dict[str, Any],
     confusion_doc: dict[str, Any],
+    quiz_doc: dict[str, Any],
 ) -> list[str]:
     errors: list[str] = []
     nodes = nodes_doc.get("data", [])
@@ -171,6 +173,27 @@ def validate(
         for key in ("idA", "idB"):
             if pair.get(key) and pair.get(key) not in node_ids:
                 errors.append(f"易混概念 {pair.get('id')} 的 {key} 无效：{pair.get(key)}")
+    question_ids: set[str] = set()
+    for group in quiz_doc.get("data", []):
+        knowledge_point_id = group.get("knowledgePointId")
+        if knowledge_point_id not in node_ids:
+            errors.append(f"基础判断题存在无效知识点：{knowledge_point_id}")
+        questions = group.get("questions", [])
+        if len(questions) < 3:
+            errors.append(f"知识点 {knowledge_point_id} 的基础判断题少于 3 道")
+        for question in questions:
+            question_id = question.get("id")
+            if not question_id or question_id in question_ids:
+                errors.append(f"基础判断题 ID 缺失或重复：{question_id}")
+            question_ids.add(question_id)
+            if not isinstance(question.get("answer"), bool):
+                errors.append(f"基础判断题 {question_id} 的答案必须为布尔值")
+            if not question.get("statement") or not question.get("explanation"):
+                errors.append(f"基础判断题 {question_id} 缺少题干或解释")
+    if quiz_doc.get("total_knowledge_points") != len(quiz_doc.get("data", [])):
+        errors.append("基础判断题知识点总数与数据不一致")
+    if quiz_doc.get("total_questions") != len(question_ids):
+        errors.append("基础判断题题目总数与数据不一致")
     return errors
 
 
@@ -206,6 +229,7 @@ def main() -> int:
         documents["知识链排序配置表.json"],
         documents["生活应用场景.json"],
         documents["易混淆概念对比表.json"],
+        documents["基础概念判断题.json"],
     )
     if errors:
         for error in errors:
