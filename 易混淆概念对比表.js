@@ -1,3 +1,4 @@
+// 此文件由 易混淆概念对比表.json 自动生成，请勿直接编辑。
 window._CONF_DATA = {
   "confusingConcepts": [
     {

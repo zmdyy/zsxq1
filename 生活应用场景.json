@@ -1,7 +1,7 @@
 {
   "lifeApplications": [
     {
-      "nodeId": "力的概念",
+      "nodeId": "mech_force_concept",
       "scenes": [
         {
           "name": "手推桌子",
@@ -16,7 +16,7 @@
       ]
     },
     {
-      "nodeId": "力的作用效果",
+      "nodeId": "mech_force_effects",
       "scenes": [
         {
           "name": "捏橡皮泥",
@@ -31,7 +31,7 @@
       ]
     },
     {
-      "nodeId": "重力",
+      "nodeId": "mech_force_gravity",
       "scenes": [
         {
           "name": "苹果落地",
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "nodeId": "弹力",
+      "nodeId": "mech_force_elastic",
       "scenes": [
         {
           "name": "弹簧测力计",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "nodeId": "摩擦力",
+      "nodeId": "mech_friction",
       "scenes": [
         {
           "name": "鞋底花纹",
@@ -76,7 +76,7 @@
       ]
     },
     {
-      "nodeId": "牛顿第一定律",
+      "nodeId": "mech_newton1",
       "scenes": [
         {
           "name": "汽车急刹车",
@@ -91,7 +91,7 @@
       ]
     },
     {
-      "nodeId": "二力平衡",
+      "nodeId": "mech_balance_forces",
       "scenes": [
         {
           "name": "静止的吊灯",
@@ -106,7 +106,7 @@
       ]
     },
     {
-      "nodeId": "压强",
+      "nodeId": "mech_pressure",
       "scenes": [
         {
           "name": "菜刀磨锋利",
@@ -121,7 +121,7 @@
       ]
     },
     {
-      "nodeId": "液体压强",
+      "nodeId": "mech_liquid_pressure",
       "scenes": [
         {
           "name": "大坝下宽上窄",
@@ -136,7 +136,7 @@
       ]
     },
     {
-      "nodeId": "大气压强",
+      "nodeId": "mech_atmospheric_pressure",
       "scenes": [
         {
           "name": "吸管喝饮料",
@@ -151,7 +151,7 @@
       ]
     },
     {
-      "nodeId": "浮力",
+      "nodeId": "mech_buoyancy",
       "scenes": [
         {
           "name": "轮船航行",
@@ -166,7 +166,7 @@
       ]
     },
     {
-      "nodeId": "阿基米德原理",
+      "nodeId": "mech_archimedes",
       "scenes": [
         {
           "name": "曹冲称象",
@@ -181,7 +181,7 @@
       ]
     },
     {
-      "nodeId": "功",
+      "nodeId": "mech_work",
       "scenes": [
         {
           "name": "搬桌子上楼",
@@ -196,7 +196,7 @@
       ]
     },
     {
-      "nodeId": "功率",
+      "nodeId": "mech_power",
       "scenes": [
         {
           "name": "汽车马力",
@@ -211,7 +211,7 @@
       ]
     },
     {
-      "nodeId": "机械效率",
+      "nodeId": "mech_efficiency",
       "scenes": [
         {
           "name": "滑轮组提升重物",
@@ -226,7 +226,7 @@
       ]
     },
     {
-      "nodeId": "杠杆",
+      "nodeId": "mech_lever",
       "scenes": [
         {
           "name": "撬棍撬石头",
@@ -241,7 +241,7 @@
       ]
     },
     {
-      "nodeId": "滑轮",
+      "nodeId": "mech_滑轮",
       "scenes": [
         {
           "name": "旗杆顶端的滑轮",
@@ -256,7 +256,7 @@
       ]
     },
     {
-      "nodeId": "动能",
+      "nodeId": "mech_kinetic_energy",
       "scenes": [
         {
           "name": "限速行驶",
@@ -271,7 +271,7 @@
       ]
     },
     {
-      "nodeId": "重力势能",
+      "nodeId": "mech_potential_energy",
       "scenes": [
         {
           "name": "高空抛物",
@@ -286,7 +286,7 @@
       ]
     },
     {
-      "nodeId": "弹性势能",
+      "nodeId": "mech_potential_energy",
       "scenes": [
         {
           "name": "射箭",
@@ -301,7 +301,7 @@
       ]
     },
     {
-      "nodeId": "温度",
+      "nodeId": "therm_temperature",
       "scenes": [
         {
           "name": "体温计",
@@ -316,7 +316,7 @@
       ]
     },
     {
-      "nodeId": "熔化和凝固",
+      "nodeId": "therm_melting_freezing",
       "scenes": [
         {
           "name": "冰雪融化",
@@ -331,7 +331,7 @@
       ]
     },
     {
-      "nodeId": "汽化和液化",
+      "nodeId": "therm_汽化与液化",
       "scenes": [
         {
           "name": "湿衣服晾干",
@@ -346,7 +346,7 @@
       ]
     },
     {
-      "nodeId": "升华和凝华",
+      "nodeId": "therm_升华与凝华",
       "scenes": [
         {
           "name": "樟脑丸变小",
@@ -361,7 +361,7 @@
       ]
     },
     {
-      "nodeId": "内能",
+      "nodeId": "therm_internal_energy",
       "scenes": [
         {
           "name": "搓手取暖",
@@ -376,7 +376,7 @@
       ]
     },
     {
-      "nodeId": "比热容",
+      "nodeId": "therm_specific_heat",
       "scenes": [
         {
           "name": "海边昼夜温差小",
@@ -391,7 +391,7 @@
       ]
     },
     {
-      "nodeId": "热传递",
+      "nodeId": "therm_热传递",
       "scenes": [
         {
           "name": "铁锅炒菜",
@@ -406,7 +406,7 @@
       ]
     },
     {
-      "nodeId": "热值",
+      "nodeId": "therm_calorific_value",
       "scenes": [
         {
           "name": "天然气做饭",
@@ -421,7 +421,7 @@
       ]
     },
     {
-      "nodeId": "热机",
+      "nodeId": "therm_heat_engine",
       "scenes": [
         {
           "name": "汽车发动机",
@@ -436,7 +436,7 @@
       ]
     },
     {
-      "nodeId": "光的直线传播",
+      "nodeId": "opt_rectilinear_propagation",
       "scenes": [
         {
           "name": "影子的形成",
@@ -451,7 +451,7 @@
       ]
     },
     {
-      "nodeId": "光的反射",
+      "nodeId": "opt_reflection_law",
       "scenes": [
         {
           "name": "平面镜成像",
@@ -466,7 +466,7 @@
       ]
     },
     {
-      "nodeId": "镜面反射和漫反射",
+      "nodeId": "opt_镜面反射与漫反射",
       "scenes": [
         {
           "name": "黑板反光",
@@ -481,7 +481,7 @@
       ]
     },
     {
-      "nodeId": "光的折射",
+      "nodeId": "opt_refraction_law",
       "scenes": [
         {
           "name": "筷子「折断」",
@@ -496,7 +496,7 @@
       ]
     },
     {
-      "nodeId": "透镜",
+      "nodeId": "opt_透镜",
       "scenes": [
         {
           "name": "放大镜",
@@ -511,7 +511,7 @@
       ]
     },
     {
-      "nodeId": "凸透镜成像规律",
+      "nodeId": "opt_lens_imaging",
       "scenes": [
         {
           "name": "照相机",
@@ -526,7 +526,7 @@
       ]
     },
     {
-      "nodeId": "光的色散",
+      "nodeId": "opt_dispersion",
       "scenes": [
         {
           "name": "彩虹",
@@ -541,7 +541,7 @@
       ]
     },
     {
-      "nodeId": "两种电荷",
+      "nodeId": "elec_charge",
       "scenes": [
         {
           "name": "摩擦起电",
@@ -556,7 +556,7 @@
       ]
     },
     {
-      "nodeId": "电流",
+      "nodeId": "elec_current",
       "scenes": [
         {
           "name": "电灯发光",
@@ -571,7 +571,7 @@
       ]
     },
     {
-      "nodeId": "电压",
+      "nodeId": "elec_voltage",
       "scenes": [
         {
           "name": "干电池",
@@ -586,7 +586,7 @@
       ]
     },
     {
-      "nodeId": "电阻",
+      "nodeId": "elec_resistance",
       "scenes": [
         {
           "name": "滑动变阻器",
@@ -601,7 +601,7 @@
       ]
     },
     {
-      "nodeId": "欧姆定律",
+      "nodeId": "elec_ohm_law",
       "scenes": [
         {
           "name": "调光台灯",
@@ -616,7 +616,7 @@
       ]
     },
     {
-      "nodeId": "串联和并联",
+      "nodeId": "elec_series_circuit",
       "scenes": [
         {
           "name": "节日小彩灯",
@@ -631,7 +631,22 @@
       ]
     },
     {
-      "nodeId": "电功",
+      "nodeId": "elec_parallel_circuit",
+      "scenes": [
+        {
+          "name": "节日小彩灯",
+          "description": "节日小彩灯通常是串联的",
+          "principle": "串联电路中电流只有一条路径，一个灯坏了，所有灯都不亮"
+        },
+        {
+          "name": "家庭电路",
+          "description": "家庭电路中的用电器都是并联的",
+          "principle": "并联电路中各用电器独立工作，互不影响"
+        }
+      ]
+    },
+    {
+      "nodeId": "elec_electric_work",
       "scenes": [
         {
           "name": "电能表",
@@ -646,7 +661,7 @@
       ]
     },
     {
-      "nodeId": "电功率",
+      "nodeId": "elec_electric_power",
       "scenes": [
         {
           "name": "灯泡亮度",
@@ -661,7 +676,7 @@
       ]
     },
     {
-      "nodeId": "焦耳定律",
+      "nodeId": "elec_joule_law",
       "scenes": [
         {
           "name": "电暖气",
@@ -676,7 +691,7 @@
       ]
     },
     {
-      "nodeId": "磁现象",
+      "nodeId": "elec_磁现象",
       "scenes": [
         {
           "name": "指南针",
@@ -691,7 +706,7 @@
       ]
     },
     {
-      "nodeId": "电磁感应",
+      "nodeId": "elec_electromagnetic_induction",
       "scenes": [
         {
           "name": "发电机",
@@ -706,7 +721,7 @@
       ]
     },
     {
-      "nodeId": "电动机",
+      "nodeId": "elec_electric_motor",
       "scenes": [
         {
           "name": "电风扇",
@@ -721,7 +736,7 @@
       ]
     },
     {
-      "nodeId": "能量",
+      "nodeId": "energy_energy_classification",
       "scenes": [
         {
           "name": "太阳能热水器",
@@ -736,7 +751,7 @@
       ]
     },
     {
-      "nodeId": "能量守恒定律",
+      "nodeId": "energy_energy_conservation",
       "scenes": [
         {
           "name": "滚摆运动",
@@ -751,7 +766,7 @@
       ]
     },
     {
-      "nodeId": "能源分类",
+      "nodeId": "energy_energy_classification",
       "scenes": [
         {
           "name": "煤炭发电",
@@ -766,7 +781,7 @@
       ]
     },
     {
-      "nodeId": "能源与可持续发展",
+      "nodeId": "energy_sustainable_可持续发展",
       "scenes": [
         {
           "name": "开发新能源",

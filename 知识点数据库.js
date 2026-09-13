@@ -1,3 +1,4 @@
+// 此文件由 知识点数据库.json 自动生成，请勿直接编辑。
 window._DB_DATA = {
   "version": "2.0",
   "update_date": "2026-09-13",
@@ -35,7 +36,9 @@ window._DB_DATA = {
         ]
       },
       "prerequisites": [],
-      "follow_ups": [],
+      "follow_ups": [
+        "mech_motion_speed"
+      ],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -208,7 +211,9 @@ window._DB_DATA = {
       "prerequisites": [
         "mech_variable_motion"
       ],
-      "follow_ups": [],
+      "follow_ups": [
+        "mech_instant_speed"
+      ],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -411,7 +416,8 @@ window._DB_DATA = {
         "mech_sound_production"
       ],
       "follow_ups": [
-        "mech_sound_speed"
+        "mech_sound_speed",
+        "mech_noise_control"
       ],
       "parallels": [],
       "cross_module": [],
@@ -454,7 +460,8 @@ window._DB_DATA = {
         "mech_sound_propagation"
       ],
       "follow_ups": [
-        "mech_pitch"
+        "mech_pitch",
+        "mech_ultrasound_infrasound"
       ],
       "parallels": [],
       "cross_module": [],
@@ -832,7 +839,8 @@ window._DB_DATA = {
         "mech_density"
       ],
       "follow_ups": [
-        "mech_material_identification"
+        "mech_material_identification",
+        "mech_hollow_problem"
       ],
       "parallels": [],
       "cross_module": [],
@@ -959,7 +967,9 @@ window._DB_DATA = {
       },
       "prerequisites": [],
       "follow_ups": [
-        "mech_force_effects"
+        "mech_force_effects",
+        "mech_newton1",
+        "mech_work"
       ],
       "parallels": [],
       "cross_module": [],
@@ -1137,7 +1147,8 @@ window._DB_DATA = {
         "mech_force_diagram"
       ],
       "follow_ups": [
-        "mech_force_elastic"
+        "mech_force_elastic",
+        "mech_pressure_force"
       ],
       "parallels": [],
       "cross_module": [],
@@ -1327,7 +1338,8 @@ window._DB_DATA = {
         "mech_force_concept"
       ],
       "follow_ups": [
-        "mech_inertia"
+        "mech_inertia",
+        "mech_force_motion_state"
       ],
       "parallels": [],
       "cross_module": [],
@@ -1420,7 +1432,8 @@ window._DB_DATA = {
         "mech_inertia"
       ],
       "follow_ups": [
-        "mech_balanced_vs_interaction"
+        "mech_balanced_vs_interaction",
+        "mech_force_composition"
       ],
       "parallels": [],
       "cross_module": [],
@@ -1637,7 +1650,11 @@ window._DB_DATA = {
         "mech_pressure_force"
       ],
       "follow_ups": [
-        "mech_liquid_pressure"
+        "mech_liquid_pressure",
+        "mech_pressure_methods",
+        "mech_buoyancy",
+        "mech_pascal_principle",
+        "mech_buoyancy_cause"
       ],
       "parallels": [],
       "cross_module": [],
@@ -1729,10 +1746,13 @@ window._DB_DATA = {
         ]
       },
       "prerequisites": [
-        "mech_pressure"
+        "mech_pressure",
+        "mech_pressure_methods"
       ],
       "follow_ups": [
-        "mech_atmospheric_pressure"
+        "mech_liquid_pressure_chars",
+        "mech_atmospheric_pressure",
+        "mech_communicating_vessels"
       ],
       "parallels": [],
       "cross_module": [],
@@ -1823,6 +1843,7 @@ window._DB_DATA = {
         ]
       },
       "prerequisites": [
+        "mech_liquid_pressure_chars",
         "mech_liquid_pressure"
       ],
       "follow_ups": [
@@ -2104,6 +2125,7 @@ window._DB_DATA = {
         ]
       },
       "prerequisites": [
+        "mech_buoyancy",
         "mech_pressure"
       ],
       "follow_ups": [
@@ -2201,7 +2223,8 @@ window._DB_DATA = {
         "mech_archimedes"
       ],
       "follow_ups": [
-        "mech_浮力应用_轮船"
+        "mech_浮力应用_轮船",
+        "mech_buoyancy_applications"
       ],
       "parallels": [],
       "cross_module": [],
@@ -2415,7 +2438,8 @@ window._DB_DATA = {
       },
       "prerequisites": [],
       "follow_ups": [
-        "mech_lever_balance"
+        "mech_lever_balance",
+        "mech_lever_elements"
       ],
       "parallels": [],
       "cross_module": [],
@@ -2502,10 +2526,13 @@ window._DB_DATA = {
         ]
       },
       "prerequisites": [
-        "mech_lever"
+        "mech_lever",
+        "mech_lever_elements"
       ],
       "follow_ups": [
-        "mech_滑轮"
+        "mech_滑轮",
+        "mech_lever_classification",
+        "mech_wheel_axle"
       ],
       "parallels": [],
       "cross_module": [],
@@ -2590,10 +2617,13 @@ window._DB_DATA = {
         ]
       },
       "prerequisites": [
-        "mech_lever_balance"
+        "mech_lever_balance",
+        "mech_lever_classification"
       ],
       "follow_ups": [
-        "mech_滑轮组"
+        "mech_滑轮组",
+        "mech_fixed_pulley",
+        "mech_moving_pulley"
       ],
       "parallels": [],
       "cross_module": [],
@@ -2716,7 +2746,9 @@ window._DB_DATA = {
         ]
       },
       "prerequisites": [
-        "mech_滑轮"
+        "mech_滑轮",
+        "mech_fixed_pulley",
+        "mech_moving_pulley"
       ],
       "follow_ups": [
         "mech_inclined_plane"
@@ -2844,7 +2876,10 @@ window._DB_DATA = {
         "mech_force_concept"
       ],
       "follow_ups": [
-        "mech_power"
+        "mech_power",
+        "mech_work_calculation",
+        "mech_kinetic_energy",
+        "mech_mechanical_energy"
       ],
       "parallels": [],
       "cross_module": [
@@ -2936,10 +2971,12 @@ window._DB_DATA = {
         ]
       },
       "prerequisites": [
-        "mech_work"
+        "mech_work",
+        "mech_work_calculation"
       ],
       "follow_ups": [
-        "mech_efficiency"
+        "mech_efficiency",
+        "mech_power_calculation"
       ],
       "parallels": [],
       "cross_module": [],
@@ -3023,6 +3060,7 @@ window._DB_DATA = {
         ]
       },
       "prerequisites": [
+        "mech_power_calculation",
         "mech_work"
       ],
       "follow_ups": [
@@ -3161,6 +3199,7 @@ window._DB_DATA = {
         ]
       },
       "prerequisites": [
+        "mech_potential_energy",
         "mech_work"
       ],
       "follow_ups": [],
@@ -3332,7 +3371,8 @@ window._DB_DATA = {
       },
       "prerequisites": [],
       "follow_ups": [
-        "therm_thermometer"
+        "therm_thermometer",
+        "therm_热膨胀"
       ],
       "parallels": [],
       "cross_module": [],
@@ -3418,6 +3458,7 @@ window._DB_DATA = {
         "therm_thermometer"
       ],
       "follow_ups": [
+        "therm_熔点与凝固点",
         "therm_熔化吸热与凝固放热"
       ],
       "parallels": [],
@@ -3502,7 +3543,8 @@ window._DB_DATA = {
         "therm_熔化吸热与凝固放热"
       ],
       "follow_ups": [
-        "therm_蒸发与沸腾"
+        "therm_蒸发与沸腾",
+        "therm_升华与凝华"
       ],
       "parallels": [],
       "cross_module": [],
@@ -3545,7 +3587,8 @@ window._DB_DATA = {
         "therm_汽化与液化"
       ],
       "follow_ups": [
-        "therm_液化方法"
+        "therm_液化方法",
+        "therm_蒸发致冷"
       ],
       "parallels": [],
       "cross_module": [],
@@ -3707,7 +3750,8 @@ window._DB_DATA = {
         "therm_物质的构成"
       ],
       "follow_ups": [
-        "therm_扩散现象"
+        "therm_扩散现象",
+        "therm_温度与分子运动"
       ],
       "parallels": [],
       "cross_module": [],
@@ -3837,7 +3881,9 @@ window._DB_DATA = {
         "therm_分子间作用力"
       ],
       "follow_ups": [
-        "therm_改变内能的方式"
+        "therm_specific_heat",
+        "therm_改变内能的方式",
+        "therm_能量守恒定律_热学"
       ],
       "parallels": [],
       "cross_module": [],
@@ -4283,7 +4329,8 @@ window._DB_DATA = {
         "therm_melting_freezing"
       ],
       "follow_ups": [
-        "therm_晶体与非晶体"
+        "therm_晶体与非晶体",
+        "therm_物态变化图像"
       ],
       "parallels": [],
       "cross_module": [],
@@ -4366,9 +4413,7 @@ window._DB_DATA = {
       "prerequisites": [
         "therm_晶体与非晶体"
       ],
-      "follow_ups": [
-        "therm_蒸发致冷"
-      ],
+      "follow_ups": [],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -4450,7 +4495,10 @@ window._DB_DATA = {
       "prerequisites": [
         "therm_蒸发致冷"
       ],
-      "follow_ups": [],
+      "follow_ups": [
+        "therm_自然界水循环",
+        "therm_相变潜热"
+      ],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -4878,7 +4926,9 @@ window._DB_DATA = {
         "opt_light_source"
       ],
       "follow_ups": [
-        "opt_light_speed"
+        "opt_light_speed",
+        "opt_reflection_law",
+        "opt_refraction_law"
       ],
       "parallels": [],
       "cross_module": [],
@@ -5100,7 +5150,9 @@ window._DB_DATA = {
         "opt_rectilinear_propagation"
       ],
       "follow_ups": [
-        "opt_镜面反射与漫反射"
+        "opt_镜面反射与漫反射",
+        "opt_光路可逆性",
+        "opt_dispersion"
       ],
       "parallels": [],
       "cross_module": [],
@@ -5270,7 +5322,10 @@ window._DB_DATA = {
       "prerequisites": [
         "opt_平面镜应用"
       ],
-      "follow_ups": [],
+      "follow_ups": [
+        "opt_凹面镜",
+        "opt_凸面镜"
+      ],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -5390,7 +5445,9 @@ window._DB_DATA = {
       "prerequisites": [
         "opt_reflection_law"
       ],
-      "follow_ups": [],
+      "follow_ups": [
+        "elec_光纤通信"
+      ],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -5525,7 +5582,9 @@ window._DB_DATA = {
         "opt_折射现象"
       ],
       "follow_ups": [
-        "opt_凸透镜对光的作用"
+        "opt_凸透镜对光的作用",
+        "opt_生活中的透镜",
+        "opt_lens_imaging"
       ],
       "parallels": [],
       "cross_module": [],
@@ -5568,6 +5627,7 @@ window._DB_DATA = {
         "opt_透镜"
       ],
       "follow_ups": [
+        "opt_lens_imaging",
         "opt_凹透镜对光的作用"
       ],
       "parallels": [],
@@ -5692,10 +5752,12 @@ window._DB_DATA = {
         ]
       },
       "prerequisites": [
-        "opt_凸透镜对光的作用"
+        "opt_凸透镜对光的作用",
+        "opt_透镜"
       ],
       "follow_ups": [
-        "opt_u_2f成像"
+        "opt_u_2f成像",
+        "opt_显微镜与望远镜"
       ],
       "parallels": [],
       "cross_module": [],
@@ -5738,7 +5800,8 @@ window._DB_DATA = {
         "opt_lens_imaging"
       ],
       "follow_ups": [
-        "opt_f_u_2f成像"
+        "opt_f_u_2f成像",
+        "opt_照相机"
       ],
       "parallels": [],
       "cross_module": [],
@@ -5781,7 +5844,8 @@ window._DB_DATA = {
         "opt_u_2f成像"
       ],
       "follow_ups": [
-        "opt_u_f成像"
+        "opt_u_f成像",
+        "opt_投影仪"
       ],
       "parallels": [],
       "cross_module": [],
@@ -5824,7 +5888,8 @@ window._DB_DATA = {
         "opt_f_u_2f成像"
       ],
       "follow_ups": [
-        "opt_照相机"
+        "opt_照相机",
+        "opt_放大镜"
       ],
       "parallels": [],
       "cross_module": [],
@@ -5863,11 +5928,10 @@ window._DB_DATA = {
         ]
       },
       "prerequisites": [
+        "opt_u_f成像",
         "opt_u_2f成像"
       ],
-      "follow_ups": [
-        "opt_投影仪"
-      ],
+      "follow_ups": [],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -5907,9 +5971,7 @@ window._DB_DATA = {
       "prerequisites": [
         "opt_f_u_2f成像"
       ],
-      "follow_ups": [
-        "opt_放大镜"
-      ],
+      "follow_ups": [],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -6401,7 +6463,11 @@ window._DB_DATA = {
         "elec_导体与绝缘体"
       ],
       "follow_ups": [
-        "elec_电路"
+        "elec_电路",
+        "elec_电流表",
+        "elec_resistance",
+        "elec_voltage",
+        "elec_电流的磁效应"
       ],
       "parallels": [],
       "cross_module": [],
@@ -6531,9 +6597,7 @@ window._DB_DATA = {
       "prerequisites": [
         "elec_series_circuit"
       ],
-      "follow_ups": [
-        "elec_电流表"
-      ],
+      "follow_ups": [],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -6573,9 +6637,7 @@ window._DB_DATA = {
       "prerequisites": [
         "elec_current"
       ],
-      "follow_ups": [
-        "elec_voltage"
-      ],
+      "follow_ups": [],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -6624,7 +6686,9 @@ window._DB_DATA = {
         "elec_current"
       ],
       "follow_ups": [
-        "elec_电压表"
+        "elec_电压表",
+        "elec_electric_work",
+        "elec_测量小灯泡的电功率"
       ],
       "parallels": [],
       "cross_module": [],
@@ -6986,7 +7050,9 @@ window._DB_DATA = {
       "prerequisites": [
         "elec_串联电路特点"
       ],
-      "follow_ups": [],
+      "follow_ups": [
+        "elec_电路故障分析"
+      ],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [
@@ -7169,7 +7235,9 @@ window._DB_DATA = {
         "elec_电能表"
       ],
       "follow_ups": [
-        "elec_额定功率与实际功率"
+        "elec_测量小灯泡的电功率",
+        "elec_额定功率与实际功率",
+        "elec_电流过大的原因"
       ],
       "parallels": [],
       "cross_module": [],
@@ -7350,7 +7418,8 @@ window._DB_DATA = {
         "elec_电热利用与防止"
       ],
       "follow_ups": [
-        "elec_安全用电"
+        "elec_安全用电",
+        "elec_电流过大的原因"
       ],
       "parallels": [],
       "cross_module": [],
@@ -7434,7 +7503,9 @@ window._DB_DATA = {
       "prerequisites": [
         "elec_安全用电"
       ],
-      "follow_ups": [],
+      "follow_ups": [
+        "elec_触电急救"
+      ],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -7519,8 +7590,8 @@ window._DB_DATA = {
         ]
       },
       "prerequisites": [
-        "elec_voltage",
-        "elec_electric_power"
+        "elec_electric_power",
+        "elec_voltage"
       ],
       "follow_ups": [],
       "parallels": [],
@@ -7566,9 +7637,7 @@ window._DB_DATA = {
         "elec_家庭电路",
         "elec_electric_power"
       ],
-      "follow_ups": [
-        "elec_安全用电"
-      ],
+      "follow_ups": [],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -7652,7 +7721,8 @@ window._DB_DATA = {
         "elec_磁现象"
       ],
       "follow_ups": [
-        "elec_地磁场"
+        "elec_地磁场",
+        "elec_electromagnetic_induction"
       ],
       "parallels": [],
       "cross_module": [],
@@ -7694,9 +7764,7 @@ window._DB_DATA = {
       "prerequisites": [
         "elec_magnetic_field"
       ],
-      "follow_ups": [
-        "elec_电流的磁效应"
-      ],
+      "follow_ups": [],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -7743,7 +7811,8 @@ window._DB_DATA = {
         "elec_current"
       ],
       "follow_ups": [
-        "elec_电磁铁"
+        "elec_电磁铁",
+        "elec_磁场对电流的作用"
       ],
       "parallels": [],
       "cross_module": [],
@@ -7827,9 +7896,7 @@ window._DB_DATA = {
       "prerequisites": [
         "elec_电磁铁"
       ],
-      "follow_ups": [
-        "elec_磁场对电流的作用"
-      ],
+      "follow_ups": [],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [],
@@ -7963,7 +8030,8 @@ window._DB_DATA = {
         "elec_magnetic_field"
       ],
       "follow_ups": [
-        "elec_generator"
+        "elec_generator",
+        "elec_电磁波"
       ],
       "parallels": [],
       "cross_module": [],
@@ -8142,7 +8210,10 @@ window._DB_DATA = {
       "prerequisites": [
         "elec_electromagnetic_induction"
       ],
-      "follow_ups": [],
+      "follow_ups": [
+        "elec_广播电视移动通信",
+        "elec_卫星通信"
+      ],
       "parallels": [],
       "cross_module": [],
       "cross_disciplinary": [
@@ -8284,7 +8355,8 @@ window._DB_DATA = {
         "elec_模拟通信与数字通信"
       ],
       "follow_ups": [
-        "elec_光纤通信"
+        "elec_光纤通信",
+        "elec_卫星通信"
       ],
       "parallels": [],
       "cross_module": [],
@@ -8332,11 +8404,11 @@ window._DB_DATA = {
         ]
       },
       "prerequisites": [
-        "opt_光路可逆性",
-        "elec_广播电视移动通信"
+        "elec_广播电视移动通信",
+        "opt_光路可逆性"
       ],
       "follow_ups": [
-        "elec_卫星通信"
+        "elec_互联网"
       ],
       "parallels": [],
       "cross_module": [

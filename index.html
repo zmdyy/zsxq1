@@ -471,14 +471,53 @@ canvas{display:block}
 .scene-item strong{display:block;font-size:13px;color:#9ee8d0;margin-bottom:4px}
 .scene-item span{display:block;font-size:12px;line-height:1.5;color:rgba(236,241,250,.82)}
 
-#info-panel .learn-btn{
-  width:100%;padding:10px;border:none;border-radius:8px;
-  background:linear-gradient(135deg,rgba(110,231,255,0.2),rgba(110,231,255,0.05));
-  color:var(--accent);font-size:14px;font-weight:500;cursor:pointer;
-  transition:all 0.3s;border:1px solid rgba(110,231,255,0.15);margin-top:16px
+.diagnosis-intro{font-size:12px;line-height:1.6;color:rgba(236,241,250,.72);margin-bottom:12px}
+.diagnosis-field{margin-bottom:14px}
+.diagnosis-field:last-child{margin-bottom:0}
+.diagnosis-field>label{display:block;font-size:12px;font-weight:800;color:rgba(245,248,252,.92);margin-bottom:6px}
+.diagnosis-field textarea,.diagnosis-field select{
+  width:100%;border:1px solid rgba(255,255,255,.1);border-radius:9px;
+  background:rgba(0,0,0,.2);color:#f5f7fb;padding:9px 10px;
+  font:13px/1.5 'Microsoft YaHei UI','Microsoft YaHei','Noto Sans SC',sans-serif;outline:none
 }
-#info-panel .learn-btn:hover{background:linear-gradient(135deg,rgba(110,231,255,0.3),rgba(110,231,255,0.1))}
-#info-panel .learn-btn.learned{background:linear-gradient(135deg,rgba(46,213,115,0.2),rgba(46,213,115,0.05));color:#2ed573;border-color:rgba(46,213,115,0.2)}
+.diagnosis-field textarea{min-height:66px;resize:vertical}
+.diagnosis-field textarea:focus,.diagnosis-field select:focus{border-color:rgba(110,231,255,.42)}
+.status-options,.error-options{display:flex;flex-wrap:wrap;gap:7px}
+.status-option,.error-option{
+  padding:7px 10px;border:1px solid rgba(255,255,255,.1);border-radius:999px;
+  background:rgba(255,255,255,.035);color:rgba(240,244,250,.8);cursor:pointer;
+  font-size:12px;transition:all .2s
+}
+.status-option:hover,.error-option:hover{border-color:rgba(110,231,255,.3)}
+.status-option.active,.error-option.active{
+  border-color:rgba(110,231,255,.55);background:rgba(110,231,255,.13);color:#fff;
+  box-shadow:0 0 12px rgba(110,231,255,.08)
+}
+.status-option[data-status="suspected"].active{border-color:rgba(255,120,120,.58);background:rgba(255,107,107,.13)}
+.status-option[data-status="reviewed"].active{border-color:rgba(216,179,90,.62);background:rgba(216,179,90,.14)}
+.diagnosis-reason{
+  padding:9px 10px;border-radius:9px;background:rgba(110,231,255,.07);
+  border:1px solid rgba(110,231,255,.14);font-size:12px;line-height:1.55;color:rgba(236,247,252,.9)
+}
+.diagnosis-saved{min-height:16px;margin-top:8px;font-size:11px;color:#9ee8d0;text-align:right}
+.quiz-intro{font-size:12px;line-height:1.6;color:rgba(236,241,250,.72);margin-bottom:12px}
+.quiz-card{padding:11px 12px;border-radius:11px;background:rgba(0,0,0,.16);border:1px solid rgba(255,255,255,.07);margin-bottom:9px}
+.quiz-card.correct{border-color:rgba(118,230,176,.34);background:rgba(118,230,176,.07)}
+.quiz-card.incorrect{border-color:rgba(255,123,123,.36);background:rgba(255,123,123,.07)}
+.quiz-question{font-size:13px;line-height:1.55;color:#f5f7fb;font-weight:700;margin-bottom:9px}
+.quiz-actions{display:flex;gap:7px}
+.quiz-answer{
+  flex:1;padding:7px 9px;border-radius:8px;border:1px solid rgba(255,255,255,.1);
+  background:rgba(255,255,255,.035);color:rgba(240,244,250,.86);cursor:pointer;font-size:12px
+}
+.quiz-answer:hover{border-color:rgba(110,231,255,.35)}
+.quiz-answer.selected{border-color:rgba(110,231,255,.56);background:rgba(110,231,255,.13);color:#fff}
+.quiz-feedback{font-size:12px;line-height:1.55;margin-top:9px;color:rgba(236,241,250,.82)}
+.quiz-feedback strong{color:#ffd766}
+.quiz-summary{padding:11px 12px;border-radius:10px;background:rgba(216,179,90,.09);border:1px solid rgba(216,179,90,.18);font-size:13px;line-height:1.55;color:#fff}
+.quiz-summary.pass{background:rgba(118,230,176,.09);border-color:rgba(118,230,176,.26)}
+.quiz-summary.fail{background:rgba(255,123,123,.09);border-color:rgba(255,123,123,.26)}
+.quiz-reset{margin-top:8px;border:0;background:transparent;color:var(--accent);font-size:12px;cursor:pointer}
 
 #tooltip{
   position:fixed;pointer-events:none;z-index:200;
@@ -748,7 +787,15 @@ canvas{display:block}
     <div class="section" id="panelCrossWrap"><h3>跨学科关联</h3><div class="tags" id="panelCross"></div></div>
     <div class="section" id="panelChainWrap"><h3>知识发展链</h3><div id="panelChain"></div></div>
     <div class="section"><h3>关联知识点</h3><div class="tags" id="panelRelated"></div></div>
-    <button class="learn-btn" id="learnBtn"><i class="far fa-circle"></i> 标记为已学习</button>
+    <div class="section" id="panelQuizWrap">
+      <h3>基础概念判断</h3>
+      <div id="panelQuiz"></div>
+    </div>
+    <div class="section" id="panelDiagnosisWrap">
+      <h3>复查诊断记录</h3>
+      <p class="diagnosis-intro">由学生和教师在交谈后共同记录。系统只整理依据，不代替教师作出诊断。</p>
+      <div id="panelDiagnosis"></div>
+    </div>
   </div>
 
   <div id="bottom-bar">
@@ -778,10 +825,10 @@ canvas{display:block}
 <script src="电磁学思维拓展数据库.js"></script>
 <script src="光学思维拓展数据库.js"></script>
 <script src="关联连线数据库.js"></script>
-<script src="关系修正数据库.js"></script>
 <script src="易混淆概念对比表.js"></script>
 <script src="知识链排序配置表.js"></script>
 <script src="生活应用场景.js"></script>
+<script src="基础概念判断题.js"></script>
 
 <script>
 // ========================== DELTA-TIME ANIMATION ENGINE ==========================
@@ -890,6 +937,7 @@ let knowledgeChains = null;
 const confuseByNodeId = new Map();
 const chainsByNodeId = new Map();
 const lifeByNodeId = new Map();
+const quizByNodeId = new Map();
 
 function indexDiagnosticData() {
   confuseByNodeId.clear();
@@ -915,6 +963,13 @@ function indexDiagnosticData() {
     if (!item.nodeId) return;
     const prev = lifeByNodeId.get(item.nodeId) || [];
     lifeByNodeId.set(item.nodeId, prev.concat(item.scenes || []));
+  });
+  quizByNodeId.clear();
+  const quizGroups = (window._QUIZ_DATA && window._QUIZ_DATA.data) || [];
+  quizGroups.forEach(function(group) {
+    if (group.knowledgePointId && starById.has(group.knowledgePointId)) {
+      quizByNodeId.set(group.knowledgePointId, group.questions || []);
+    }
   });
 }
 
@@ -1003,9 +1058,26 @@ function buildDataMaps(dbData, connData) {
   connData.forEach(c => {
     const from = starById.get(c.from);
     const to = starById.get(c.to);
-    if (!from || !to) return;
+    if (!from || !to) {
+      if (c.type === 'cross_disciplinary' && (from || to)) {
+        const internal = from || to;
+        const externalId = from ? c.to : c.from;
+        const external = resolveCrossItem(externalId);
+        if (external) {
+          external.external = true;
+          external.note = c.note || '';
+          external.strength = c.strength || 0;
+          pushCrossDiscipline(internal, external);
+        }
+      }
+      return;
+    }
     const typeNum = CONN_TYPE_MAP[c.type] !== undefined ? CONN_TYPE_MAP[c.type] : 0;
-    const conn = { from, to, type: typeNum, fromId: c.from, toId: c.to };
+    const conn = {
+      from, to, type: typeNum, relationType: c.type,
+      fromId: c.from, toId: c.to,
+      note: c.note || '', strength: c.strength || 0
+    };
     if (!connMap.has(c.from)) connMap.set(c.from, []);
     if (!connMap.has(c.to)) connMap.set(c.to, []);
     connMap.get(c.from).push(conn);
@@ -1016,23 +1088,52 @@ function buildDataMaps(dbData, connData) {
   });
 }
 
-// localStorage helper with error handling
-function getLearned() {
-  try { return JSON.parse(localStorage.getItem('pku_learned') || '{}'); }
+const KNOWLEDGE_STATUSES = {
+  unseen: { label: '未接触', color: null },
+  suspected: { label: '疑似障碍', color: '#ff7b7b' },
+  emerging: { label: '初步掌握', color: '#76e6b0' },
+  reviewed: { label: '已复查待验证', color: '#d8b35a' }
+};
+const ERROR_TYPES = ['概念不清', '公式不会', '模型识别失败', '运算或单位错误', '迁移困难'];
+
+// Local diagnostic records. Legacy learned flags are migrated to 初步掌握.
+function getDiagnosticRecords() {
+  try {
+    const saved = JSON.parse(localStorage.getItem('pku_diagnostics') || '{}');
+    if (Object.keys(saved).length) return saved;
+    const legacy = JSON.parse(localStorage.getItem('pku_learned') || '{}');
+    const migrated = {};
+    Object.keys(legacy).forEach(function(id) {
+      if (legacy[id]) migrated[id] = { status: 'emerging', errorTypes: [] };
+    });
+    if (Object.keys(migrated).length) saveDiagnosticRecords(migrated);
+    return migrated;
+  }
   catch(e) { return {}; }
 }
-function saveLearned(data) {
-  try { localStorage.setItem('pku_learned', JSON.stringify(data)); } catch(e) {}
+function saveDiagnosticRecords(data) {
+  try { localStorage.setItem('pku_diagnostics', JSON.stringify(data)); } catch(e) {}
+}
+function getDiagnosticRecord(id) {
+  const record = getDiagnosticRecords()[id] || {};
+  return Object.assign({
+    status: 'unseen', errorTypes: [], whyWrong: '', obstacleLevel: 'uncertain',
+    obstacleNodeId: '', reviewReason: '', verification: 'not_checked',
+    conceptChecks: {}
+  }, record);
+}
+function getKnowledgeStatus(id) {
+  return getDiagnosticRecord(id).status;
 }
 function isLearned(id) {
-  return !!(getLearned()[id]);
+  return getKnowledgeStatus(id) === 'emerging';
 }
 
 // Enhanced state management
 const stateManager = {
   save: function() {
     const state = {
-      learned: getLearned(),
+      diagnostics: getDiagnosticRecords(),
       cameraPosition: camera.position.toArray(),
       cameraTarget: controls.target.toArray(),
       selectedModule: currentModule,
@@ -1077,6 +1178,7 @@ const stateManager = {
     try {
       localStorage.removeItem('pku_state');
       localStorage.removeItem('pku_learned');
+      localStorage.removeItem('pku_diagnostics');
       return true;
     } catch(e) {
       return false;
@@ -1085,9 +1187,9 @@ const stateManager = {
   
   exportData: function() {
     const data = {
-      learned: getLearned(),
+      diagnostics: getDiagnosticRecords(),
       exportDate: new Date().toISOString(),
-      version: '1.0'
+      version: '2.0'
     };
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
@@ -1104,8 +1206,16 @@ const stateManager = {
       reader.onload = (e) => {
         try {
           const data = JSON.parse(e.target.result);
-          if (data.learned) {
-            saveLearned(data.learned);
+          if (data.diagnostics || data.learned) {
+            if (data.diagnostics) {
+              saveDiagnosticRecords(data.diagnostics);
+            } else {
+              const migrated = {};
+              Object.keys(data.learned || {}).forEach(function(id) {
+                if (data.learned[id]) migrated[id] = { status: 'emerging', errorTypes: [] };
+              });
+              saveDiagnosticRecords(migrated);
+            }
             updateLearnedGlows();
             updateStarCount();
             resolve(true);
@@ -1158,6 +1268,7 @@ let focusRelatedList = [];
 let focusRelatedIndex = -1;
 let connCounts, maxConn, minConn, hubStarId, hubConnCount;
 let currentModuleHubId = null;
+let currentModule = 'all';
 let visualCenterStar = null;
 let labelLayer;
 let labelItems = [];
@@ -1169,7 +1280,7 @@ const hitMaterial = new THREE.MeshBasicMaterial({ transparent: true, opacity: 0,
 let panel, panelTitle, panelMeta, panelDef, panelFormula, panelFormulaWrap, panelThinking, panelThinkingWrap;
 let panelApps, panelExam, panelRelated, panelCross, panelCrossWrap;
 let panelMistakes, panelMistakesWrap, panelConfuse, panelConfuseWrap, panelChain, panelChainWrap, panelScenes;
-let panelHistory, panelHistoryWrap, learnBtn, panelClose, panelIcon;
+let panelHistory, panelHistoryWrap, panelQuiz, panelQuizWrap, panelDiagnosis, panelDiagnosisWrap, panelClose, panelIcon;
 let searchTrigger, searchOverlay, searchInput, searchResults;
 let loadBar, loadStatus, tooltip;
 
@@ -1207,10 +1318,7 @@ try {
   [window._MECH_THINKING_DATA, window._ELEC_THINKING_DATA, window._OPT_THINKING_DATA].forEach(function(extension) {
     if (extension && extension.applyTo) extension.applyTo(dbData);
   });
-  let connData = connObj.data || connObj;
-  if (window._RELATION_PATCH_DATA && window._RELATION_PATCH_DATA.applyTo) {
-    connData = window._RELATION_PATCH_DATA.applyTo(connData);
-  }
+  const connData = connObj.data || connObj;
   buildDataMaps(dbData, connData);
   indexDiagnosticData();
   updateLoad(12, '数据加载完成，初始化3D场景...');
@@ -1295,7 +1403,8 @@ controls.enableDamping = true;
 controls.dampingFactor = 0.045;
 controls.minDistance = 90;
 controls.maxDistance = 1200;
-controls.maxPolarAngle = Math.PI / 1.85;
+controls.minPolarAngle = 0;
+controls.maxPolarAngle = Math.PI;
 controls.target.set(0, 0, 0);
 controls.autoRotate = true;
 controls.autoRotateSpeed = 0.035;
@@ -2706,13 +2815,16 @@ panelConfuseWrap = document.getElementById('panelConfuseWrap');
 panelChain = document.getElementById('panelChain');
 panelChainWrap = document.getElementById('panelChainWrap');
 panelScenes = document.getElementById('panelScenes');
-learnBtn = document.getElementById('learnBtn');
+panelQuiz = document.getElementById('panelQuiz');
+panelQuizWrap = document.getElementById('panelQuizWrap');
+panelDiagnosis = document.getElementById('panelDiagnosis');
+panelDiagnosisWrap = document.getElementById('panelDiagnosisWrap');
 panelClose = document.getElementById('panelClose');
 
 panelClose.addEventListener('click', deselectStar);
 
 document.querySelectorAll('#info-panel .section h3').forEach(function(title, index) {
-  var steps = ['01 概念', '02 错因', '03 公式', '04 思维', '05 易混', '06 应用', '07 考点', '08 故事', '09 跨学科', '10 发展', '11 脉络'];
+  var steps = ['01 概念', '02 错因', '03 公式', '04 思维', '05 易混', '06 应用', '07 考点', '08 故事', '09 跨学科', '10 发展', '11 脉络', '12 判断', '13 诊断'];
   title.setAttribute('data-step', steps[index] || '');
 });
 
@@ -2893,9 +3005,10 @@ function renderKnowledgeChainPanel(star) {
         row.appendChild(arrow);
       }
       const step = document.createElement('div');
-      const unlearned = !isLearned(nid);
-      step.className = 'chain-step' + (nid === star.id ? ' current' : '') + (unlearned && nid !== star.id ? ' unlearned' : '');
-      step.innerHTML = '<strong>' + (nid === star.id ? '当前' : (unlearned ? '待复查' : '已学')) + '</strong>' + node.name;
+      const status = getKnowledgeStatus(nid);
+      const needsReview = status === 'suspected' || status === 'reviewed';
+      step.className = 'chain-step' + (nid === star.id ? ' current' : '') + (needsReview && nid !== star.id ? ' unlearned' : '');
+      step.innerHTML = '<strong>' + (nid === star.id ? '当前' : KNOWLEDGE_STATUSES[status].label) + '</strong>' + node.name;
       bindJump(step, nid);
       row.appendChild(step);
     });
@@ -2911,6 +3024,292 @@ function renderKnowledgeChainPanel(star) {
     showKnowledgeChain(star.id);
   });
   panelChain.appendChild(btn);
+}
+
+function saveDiagnosticRecord(id, record, options) {
+  const records = getDiagnosticRecords();
+  record.updatedAt = new Date().toISOString();
+  records[id] = record;
+  saveDiagnosticRecords(records);
+  scheduleAutoSave();
+  const saved = panelDiagnosis && panelDiagnosis.querySelector('.diagnosis-saved');
+  if (saved) saved.textContent = '已保存';
+  setTimeout(function() {
+    if (saved) saved.textContent = '';
+  }, 1400);
+  if (options && options.refreshStatus) {
+    updateLearnedGlows();
+    updateStarCount();
+    if (selectedId && starById.get(selectedId)) renderKnowledgeChainPanel(starById.get(selectedId));
+  }
+}
+
+function diagnosticReason(star, record) {
+  if (record.obstacleLevel === 'prerequisite') {
+    const prerequisite = starById.get(record.obstacleNodeId);
+    if (prerequisite) {
+      return prerequisite.name + ' 是“' + star.name + '”的前置知识，因此由教师和学生确认后纳入复查。';
+    }
+    return '当前表现可能由更早的前置知识造成，请先在前置知识中选择需要验证的节点。';
+  }
+  if (record.obstacleLevel === 'current') {
+    return '当前错题直接涉及“' + star.name + '”，先验证本知识点；该提示是复查顺序说明，不是自动诊断结论。';
+  }
+  return '暂未确定障碍位置。建议教师结合学生解释过程，在当前知识点与前置知识之间逐步验证。';
+}
+
+function renderConceptQuiz(star) {
+  const questions = quizByNodeId.get(star.id) || [];
+  panelQuiz.innerHTML = '';
+  if (!questions.length) {
+    panelQuizWrap.style.display = 'none';
+    return;
+  }
+  panelQuizWrap.style.display = 'block';
+  const record = getDiagnosticRecord(star.id);
+  record.conceptChecks = record.conceptChecks || {};
+
+  const intro = document.createElement('p');
+  intro.className = 'quiz-intro';
+  intro.textContent = '完成本组判断题，检查基础概念是否清楚。结果只作为诊断证据，不自动替代教师判断。';
+  panelQuiz.appendChild(intro);
+
+  questions.forEach(function(question, index) {
+    const check = record.conceptChecks[question.id];
+    const card = document.createElement('div');
+    card.className = 'quiz-card' + (check ? (check.correct ? ' correct' : ' incorrect') : '');
+    const statement = document.createElement('div');
+    statement.className = 'quiz-question';
+    statement.textContent = (index + 1) + '. ' + question.statement;
+    const actions = document.createElement('div');
+    actions.className = 'quiz-actions';
+    [
+      { value: true, label: '正确' },
+      { value: false, label: '错误' }
+    ].forEach(function(choice) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'quiz-answer' + (check && check.answer === choice.value ? ' selected' : '');
+      button.textContent = choice.label;
+      button.addEventListener('click', function() {
+        record.conceptChecks[question.id] = {
+          answer: choice.value,
+          correct: choice.value === question.answer,
+          answeredAt: new Date().toISOString()
+        };
+        const answered = questions.filter(function(item) {
+          return record.conceptChecks[item.id];
+        });
+        const correct = answered.filter(function(item) {
+          return record.conceptChecks[item.id].correct;
+        }).length;
+        record.conceptAssessment = {
+          answered: answered.length,
+          correct: correct,
+          total: questions.length,
+          passed: answered.length === questions.length && correct === questions.length,
+          updatedAt: new Date().toISOString()
+        };
+        saveDiagnosticRecord(star.id, record);
+        renderConceptQuiz(star);
+      });
+      actions.appendChild(button);
+    });
+    card.append(statement, actions);
+    if (check) {
+      const feedback = document.createElement('div');
+      feedback.className = 'quiz-feedback';
+      feedback.innerHTML = '<strong>' + (check.correct ? '判断正确。' : '判断有误。') + '</strong> ' + question.explanation;
+      card.appendChild(feedback);
+    }
+    panelQuiz.appendChild(card);
+  });
+
+  const answeredCount = questions.filter(function(question) {
+    return record.conceptChecks[question.id];
+  }).length;
+  const correctCount = questions.filter(function(question) {
+    return record.conceptChecks[question.id] && record.conceptChecks[question.id].correct;
+  }).length;
+  const summary = document.createElement('div');
+  summary.className = 'quiz-summary';
+  if (answeredCount < questions.length) {
+    summary.innerHTML = '<strong>已完成 ' + answeredCount + '/' + questions.length + '</strong><br>全部作答后生成基础概念判断。';
+  } else if (correctCount === questions.length) {
+    summary.classList.add('pass');
+    summary.innerHTML = '<strong>基础概念判断通过（' + correctCount + '/' + questions.length + '）</strong><br>本组题支持“具备初步掌握倾向”，仍建议结合讲解过程或应用题验证。';
+  } else {
+    summary.classList.add('fail');
+    summary.innerHTML = '<strong>存在基础概念疑点（' + correctCount + '/' + questions.length + '）</strong><br>建议查看答错题目的解释，并由教师继续追问。';
+  }
+  panelQuiz.appendChild(summary);
+  if (answeredCount) {
+    const reset = document.createElement('button');
+    reset.type = 'button';
+    reset.className = 'quiz-reset';
+    reset.textContent = '重新作答本组题目';
+    reset.addEventListener('click', function() {
+      questions.forEach(function(question) {
+        delete record.conceptChecks[question.id];
+      });
+      delete record.conceptAssessment;
+      saveDiagnosticRecord(star.id, record);
+      renderConceptQuiz(star);
+    });
+    panelQuiz.appendChild(reset);
+  }
+}
+
+function renderDiagnosis(star) {
+  panelDiagnosis.innerHTML = '';
+  const record = getDiagnosticRecord(star.id);
+
+  const statusField = document.createElement('div');
+  statusField.className = 'diagnosis-field';
+  const statusLabel = document.createElement('label');
+  statusLabel.textContent = '当前状态';
+  const statusOptions = document.createElement('div');
+  statusOptions.className = 'status-options';
+  Object.keys(KNOWLEDGE_STATUSES).forEach(function(key) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'status-option' + (record.status === key ? ' active' : '');
+    button.dataset.status = key;
+    button.textContent = KNOWLEDGE_STATUSES[key].label;
+    button.addEventListener('click', function() {
+      record.status = key;
+      statusOptions.querySelectorAll('.status-option').forEach(function(item) {
+        item.classList.toggle('active', item.dataset.status === key);
+      });
+      saveDiagnosticRecord(star.id, record, { refreshStatus: true });
+    });
+    statusOptions.appendChild(button);
+  });
+  statusField.append(statusLabel, statusOptions);
+
+  const whyField = document.createElement('div');
+  whyField.className = 'diagnosis-field';
+  const whyLabel = document.createElement('label');
+  whyLabel.textContent = '学生这道题为什么错？';
+  const whyInput = document.createElement('textarea');
+  whyInput.placeholder = '记录学生的解题过程、原话和教师判断依据';
+  whyInput.value = record.whyWrong;
+  whyInput.addEventListener('input', function() {
+    record.whyWrong = whyInput.value;
+    saveDiagnosticRecord(star.id, record);
+  });
+  whyField.append(whyLabel, whyInput);
+
+  const errorField = document.createElement('div');
+  errorField.className = 'diagnosis-field';
+  const errorLabel = document.createElement('label');
+  errorLabel.textContent = '错误类型（可多选）';
+  const errorOptions = document.createElement('div');
+  errorOptions.className = 'error-options';
+  ERROR_TYPES.forEach(function(type) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'error-option' + (record.errorTypes.indexOf(type) >= 0 ? ' active' : '');
+    button.textContent = type;
+    button.addEventListener('click', function() {
+      const index = record.errorTypes.indexOf(type);
+      if (index >= 0) record.errorTypes.splice(index, 1);
+      else record.errorTypes.push(type);
+      button.classList.toggle('active', record.errorTypes.indexOf(type) >= 0);
+      saveDiagnosticRecord(star.id, record);
+    });
+    errorOptions.appendChild(button);
+  });
+  errorField.append(errorLabel, errorOptions);
+
+  const obstacleField = document.createElement('div');
+  obstacleField.className = 'diagnosis-field';
+  const obstacleLabel = document.createElement('label');
+  obstacleLabel.textContent = '真正障碍在哪里？';
+  const obstacleSelect = document.createElement('select');
+  [
+    ['uncertain', '暂不能确定'],
+    ['current', '当前知识点'],
+    ['prerequisite', '更早的前置知识']
+  ].forEach(function(optionData) {
+    const option = document.createElement('option');
+    option.value = optionData[0];
+    option.textContent = optionData[1];
+    option.selected = record.obstacleLevel === optionData[0];
+    obstacleSelect.appendChild(option);
+  });
+  const prerequisiteSelect = document.createElement('select');
+  prerequisiteSelect.style.marginTop = '7px';
+  const placeholder = document.createElement('option');
+  placeholder.value = '';
+  placeholder.textContent = '选择待验证的前置知识';
+  prerequisiteSelect.appendChild(placeholder);
+  (star.prerequisites || []).forEach(function(id) {
+    const prerequisite = starById.get(String(id).trim());
+    if (!prerequisite) return;
+    const option = document.createElement('option');
+    option.value = prerequisite.id;
+    option.textContent = prerequisite.name;
+    option.selected = record.obstacleNodeId === prerequisite.id;
+    prerequisiteSelect.appendChild(option);
+  });
+  prerequisiteSelect.style.display = record.obstacleLevel === 'prerequisite' ? 'block' : 'none';
+  const reason = document.createElement('div');
+  reason.className = 'diagnosis-reason';
+  reason.style.marginTop = '7px';
+  reason.textContent = diagnosticReason(star, record);
+  obstacleSelect.addEventListener('change', function() {
+    record.obstacleLevel = obstacleSelect.value;
+    if (record.obstacleLevel !== 'prerequisite') record.obstacleNodeId = '';
+    prerequisiteSelect.style.display = record.obstacleLevel === 'prerequisite' ? 'block' : 'none';
+    reason.textContent = diagnosticReason(star, record);
+    saveDiagnosticRecord(star.id, record);
+  });
+  prerequisiteSelect.addEventListener('change', function() {
+    record.obstacleNodeId = prerequisiteSelect.value;
+    reason.textContent = diagnosticReason(star, record);
+    saveDiagnosticRecord(star.id, record);
+  });
+  obstacleField.append(obstacleLabel, obstacleSelect, prerequisiteSelect, reason);
+
+  const reviewField = document.createElement('div');
+  reviewField.className = 'diagnosis-field';
+  const reviewLabel = document.createElement('label');
+  reviewLabel.textContent = '为什么建议复查这个节点？';
+  const reviewInput = document.createElement('textarea');
+  reviewInput.placeholder = '补充题目证据、学生表现或教师判断';
+  reviewInput.value = record.reviewReason;
+  reviewInput.addEventListener('input', function() {
+    record.reviewReason = reviewInput.value;
+    saveDiagnosticRecord(star.id, record);
+  });
+  reviewField.append(reviewLabel, reviewInput);
+
+  const verifyField = document.createElement('div');
+  verifyField.className = 'diagnosis-field';
+  const verifyLabel = document.createElement('label');
+  verifyLabel.textContent = '复查后是否真的解决？';
+  const verifySelect = document.createElement('select');
+  [
+    ['not_checked', '尚未验证'],
+    ['resolved', '验证通过，已经解决'],
+    ['unresolved', '验证未通过，仍有障碍']
+  ].forEach(function(optionData) {
+    const option = document.createElement('option');
+    option.value = optionData[0];
+    option.textContent = optionData[1];
+    option.selected = record.verification === optionData[0];
+    verifySelect.appendChild(option);
+  });
+  verifySelect.addEventListener('change', function() {
+    record.verification = verifySelect.value;
+    saveDiagnosticRecord(star.id, record);
+  });
+  const saved = document.createElement('div');
+  saved.className = 'diagnosis-saved';
+  verifyField.append(verifyLabel, verifySelect, saved);
+
+  panelDiagnosis.append(statusField, whyField, errorField, obstacleField, reviewField, verifyField);
 }
 
 function showInfoPanel(star) {
@@ -3001,6 +3400,7 @@ function showInfoPanel(star) {
       var sc = SUBJ_COLORS[cd.subject] || '#8e44ad';
       tag.style.cssText = 'border-color:' + sc + ';color:' + sc + ';background:' + sc + '11';
       tag.innerHTML = '<i class="fas ' + (SUBJ_ICONS[cd.subject] || 'fa-link') + '"></i> ' + cd.subject + ' \u00b7 ' + cd.concept;
+      if (cd.external) tag.title = cd.note || '外部学科概念（不作为物理图谱节点绘制）';
       if (cd.targetId) {
         tag.addEventListener('click', function(e) {
           e.preventDefault();
@@ -3129,10 +3529,8 @@ function showInfoPanel(star) {
     navBar.appendChild(nextBtn);
     panelRelated.appendChild(navBar);
   }
-  var learned = getLearned()[star.id];
-  learnBtn.innerHTML = learned ? '<i class="fas fa-check-circle"></i> \u5df2\u5b66\u4e60' : '<i class="far fa-circle"></i> \u6807\u8bb0\u4e3a\u5df2\u5b66\u4e60';
-  learnBtn.className = 'learn-btn' + (learned ? ' learned' : '');
-  learnBtn.onclick = function() { toggleLearned(star.id); };
+  renderConceptQuiz(star);
+  renderDiagnosis(star);
   panel.classList.add('visible');
 }
 
@@ -3140,33 +3538,24 @@ function hideInfoPanel() {
   panel.classList.remove('visible');
 }
 
-// ========================== LEARNED ==========================
-function toggleLearned(id) {
-  const data = getLearned();
-  data[id] = !data[id];
-  saveLearned(data);
-  if (data[id]) {
-    learnBtn.innerHTML = '<i class="fas fa-check-circle"></i> 已学习';
-    learnBtn.className = 'learn-btn learned';
-  } else {
-    learnBtn.innerHTML = '<i class="far fa-circle"></i> 标记为已学习';
-    learnBtn.className = 'learn-btn';
-  }
-  updateLearnedGlows();
-  if (selectedId && starById.get(selectedId)) renderKnowledgeChainPanel(starById.get(selectedId));
-}
-
 function updateLearnedGlows() {
   starData.forEach((entry, id) => {
-    const learned = isLearned(id);
+    const status = getKnowledgeStatus(id);
+    const statusColor = KNOWLEDGE_STATUSES[status] && KNOWLEDGE_STATUSES[status].color;
     const isModuleHub = id === currentModuleHubId;
-    const color = id === selectedId ? new THREE.Color('#ffd766') : isModuleHub ? new THREE.Color('#fff4bf') : learned ? new THREE.Color('#d8b35a') : (MOD_COLORS[entry.star.module] || new THREE.Color(0xffffff));
+    const color = id === selectedId
+      ? new THREE.Color('#ffd766')
+      : isModuleHub
+        ? new THREE.Color('#fff4bf')
+        : statusColor
+          ? new THREE.Color(statusColor)
+          : (MOD_COLORS[entry.star.module] || new THREE.Color(0xffffff));
     const idx = entry.pointIndex * 3;
     starColors[idx] = color.r;
     starColors[idx + 1] = color.g;
     starColors[idx + 2] = color.b;
     const labelItem = labelItems.find(item => item.id === id);
-    if (labelItem) labelItem.label.style.color = id === selectedId ? '#ffd766' : isModuleHub ? '#fff4bf' : learned ? '#d8b35a' : (entry.tier === 'core' ? '#fff' : color.getStyle());
+    if (labelItem) labelItem.label.style.color = id === selectedId ? '#ffd766' : isModuleHub ? '#fff4bf' : statusColor || (entry.tier === 'core' ? '#fff' : color.getStyle());
   });
   starGeo.attributes.color.needsUpdate = true;
   starGeo.attributes.customColor.needsUpdate = true;
@@ -3389,8 +3778,6 @@ function flyToOverview() {
 const moduleBtns = document.querySelectorAll('.module-btn');
 const sidebarBtns = document.querySelectorAll('#sidebar .s-btn');
 
-let currentModule = 'all';
-
 function setActiveModule(mod) {
   currentModule = mod;
   if (selectedId) clearSelectionState(selectedId, { resetCamera: false, hidePanel: true, restoreConnections: false });
@@ -3473,9 +3860,15 @@ if (importBtn && importFile) {
 // ========================== STAR COUNT ==========================
 function updateStarCount() {
   const total = starById.size;
-  const learned = getLearned();
-  const learnedCount = Object.values(learned).filter(v => v).length;
-  document.getElementById('starCount').textContent = `✦ ${learnedCount}/${total} 已学习`;
+  const records = getDiagnosticRecords();
+  const recordedCount = Object.values(records).filter(function(record) {
+    return record && record.status && record.status !== 'unseen';
+  }).length;
+  const suspectedCount = Object.values(records).filter(function(record) {
+    return record && record.status === 'suspected';
+  }).length;
+  document.getElementById('starCount').textContent =
+    `✦ ${recordedCount}/${total} 已记录${suspectedCount ? ` · ${suspectedCount} 疑似障碍` : ''}`;
 }
 updateStarCount();
 
@@ -3703,7 +4096,7 @@ document.addEventListener('keydown', (e) => {
 // ========================== CONSOLE EXPOSE ==========================
 window.__PKU = { starById, starMap, connMap, MODULES, selectStar, deselectStar,
   flyToModule, flyToOverview, flyToStar, setActiveModule, getCurrentModule: () => currentModule,
-  connDataArr, lineDataMap, performanceMonitor };
+  getControls: () => controls, connDataArr, lineDataMap, performanceMonitor };
 console.log(`✦ 物理知识宇宙 loaded | ${starById.size} stars, ${connDataArr.length} connections`);
 
 })();
