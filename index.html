@@ -1268,6 +1268,7 @@ let focusRelatedList = [];
 let focusRelatedIndex = -1;
 let connCounts, maxConn, minConn, hubStarId, hubConnCount;
 let currentModuleHubId = null;
+let currentModule = 'all';
 let visualCenterStar = null;
 let labelLayer;
 let labelItems = [];
@@ -3776,8 +3777,6 @@ function flyToOverview() {
 // ========================== MODULE NAVIGATION ==========================
 const moduleBtns = document.querySelectorAll('.module-btn');
 const sidebarBtns = document.querySelectorAll('#sidebar .s-btn');
-
-let currentModule = 'all';
 
 function setActiveModule(mod) {
   currentModule = mod;
