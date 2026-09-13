@@ -218,7 +218,7 @@ def main() -> int:
         destination = ROOT / js_name
         if args.write:
             destination.write_text(expected, encoding="utf-8")
-        elif not destination.exists() or destination.read_text(encoding="utf-8") != expected:
+        elif not destination.exists() or destination.read_bytes().decode("utf-8") != expected:
             mismatched.append(js_name)
     if mismatched:
         print("ERROR: 生成文件未同步：" + "、".join(mismatched), file=sys.stderr)
